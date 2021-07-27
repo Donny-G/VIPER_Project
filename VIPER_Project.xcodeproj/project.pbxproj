@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		059B521626AAC20C0004997C /* MainScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521526AAC20C0004997C /* MainScreenConfigurator.swift */; };
+		056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B835E26AF01BE0082937E /* MainScreenWireframe.swift */; };
+		056B836126AF065F0082937E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B836026AF065F0082937E /* NetworkManager.swift */; };
 		059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521726AAC2420004997C /* MainScreenPresenter.swift */; };
 		059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521926AAC2710004997C /* MainScreenInteractor.swift */; };
 		059B521C26AAC2920004997C /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521B26AAC2920004997C /* MainScreenRouter.swift */; };
-		059B522026AAD5700004997C /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521F26AAD5700004997C /* Entity.swift */; };
-		059B522226AAD6020004997C /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B522126AAD6020004997C /* Entities.swift */; };
+		059B522026AAD5700004997C /* V1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521F26AAD5700004997C /* V1.swift */; };
+		059B522226AAD6020004997C /* V2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B522126AAD6020004997C /* V2.swift */; };
+		059B522526AB0D320004997C /* URLParsingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B522426AB0D320004997C /* URLParsingService.swift */; };
 		05BBF46226A9536B005CBB89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF46126A9536B005CBB89 /* AppDelegate.swift */; };
 		05BBF46426A9536B005CBB89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF46326A9536B005CBB89 /* SceneDelegate.swift */; };
 		05BBF46626A9536B005CBB89 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF46526A9536B005CBB89 /* MainScreenViewController.swift */; };
@@ -41,12 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		059B521526AAC20C0004997C /* MainScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenConfigurator.swift; sourceTree = "<group>"; };
+		056B835E26AF01BE0082937E /* MainScreenWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenWireframe.swift; sourceTree = "<group>"; };
+		056B836026AF065F0082937E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		059B521726AAC2420004997C /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
 		059B521926AAC2710004997C /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
 		059B521B26AAC2920004997C /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
-		059B521F26AAD5700004997C /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
-		059B522126AAD6020004997C /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		059B521F26AAD5700004997C /* V1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V1.swift; sourceTree = "<group>"; };
+		059B522126AAD6020004997C /* V2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2.swift; sourceTree = "<group>"; };
+		059B522426AB0D320004997C /* URLParsingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParsingService.swift; sourceTree = "<group>"; };
 		05BBF45E26A9536B005CBB89 /* VIPER_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPER_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BBF46126A9536B005CBB89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05BBF46326A9536B005CBB89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,10 +113,10 @@
 			isa = PBXGroup;
 			children = (
 				05BBF46526A9536B005CBB89 /* MainScreenViewController.swift */,
-				059B521526AAC20C0004997C /* MainScreenConfigurator.swift */,
 				059B521726AAC2420004997C /* MainScreenPresenter.swift */,
 				059B521926AAC2710004997C /* MainScreenInteractor.swift */,
 				059B521B26AAC2920004997C /* MainScreenRouter.swift */,
+				056B835E26AF01BE0082937E /* MainScreenWireframe.swift */,
 			);
 			name = MainScreen;
 			sourceTree = "<group>";
@@ -120,8 +124,8 @@
 		059B521D26AAC2DA0004997C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				059B521F26AAD5700004997C /* Entity.swift */,
-				059B522126AAD6020004997C /* Entities.swift */,
+				059B521F26AAD5700004997C /* V1.swift */,
+				059B522126AAD6020004997C /* V2.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -133,6 +137,15 @@
 				05BBF46326A9536B005CBB89 /* SceneDelegate.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		059B522326AB0D0B0004997C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				059B522426AB0D320004997C /* URLParsingService.swift */,
+				056B836026AF065F0082937E /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		05BBF45526A9536B005CBB89 = {
@@ -158,6 +171,7 @@
 		05BBF46026A9536B005CBB89 /* VIPER_Project */ = {
 			isa = PBXGroup;
 			children = (
+				059B522326AB0D0B0004997C /* Services */,
 				059B521D26AAC2DA0004997C /* Entities */,
 				059B521E26AAC3020004997C /* Common */,
 				059B521326AAC0F30004997C /* Modules */,
@@ -196,7 +210,7 @@
 				05BBF45A26A9536B005CBB89 /* Sources */,
 				05BBF45B26A9536B005CBB89 /* Frameworks */,
 				05BBF45C26A9536B005CBB89 /* Resources */,
-				05BBF49126A95377005CBB89 /* ShellScript */,
+				05BBF49126A95377005CBB89 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -313,7 +327,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05BBF49126A95377005CBB89 /* ShellScript */ = {
+		05BBF49126A95377005CBB89 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -322,13 +336,14 @@
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n    fi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint --strict\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n    fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -340,10 +355,12 @@
 				059B521C26AAC2920004997C /* MainScreenRouter.swift in Sources */,
 				05BBF46626A9536B005CBB89 /* MainScreenViewController.swift in Sources */,
 				05BBF46226A9536B005CBB89 /* AppDelegate.swift in Sources */,
+				056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */,
+				056B836126AF065F0082937E /* NetworkManager.swift in Sources */,
 				05BBF46426A9536B005CBB89 /* SceneDelegate.swift in Sources */,
-				059B522026AAD5700004997C /* Entity.swift in Sources */,
-				059B521626AAC20C0004997C /* MainScreenConfigurator.swift in Sources */,
-				059B522226AAD6020004997C /* Entities.swift in Sources */,
+				059B522026AAD5700004997C /* V1.swift in Sources */,
+				059B522526AB0D320004997C /* URLParsingService.swift in Sources */,
+				059B522226AAD6020004997C /* V2.swift in Sources */,
 				059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */,
 				059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */,
 			);

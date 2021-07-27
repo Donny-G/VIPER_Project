@@ -6,7 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
-class MainScreenRouter {
-    
+protocol MainScreenRouterProtocol: AnyObject {
+    // func presentDetailView(from view: MainScreenViewProtocol, for object: Object)
+}
+
+class MainScreenRouter: MainScreenRouterProtocol {
+
 }
