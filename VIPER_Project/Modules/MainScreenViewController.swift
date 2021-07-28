@@ -13,7 +13,7 @@ protocol MainScreenViewProtocol: AnyObject {
 
 final class MainScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    private var presenter: MainScreenPresenterProtocol?
+    var presenter: MainScreenPresenterProtocol?
 
     private var tableView = UITableView()
 
@@ -24,21 +24,20 @@ final class MainScreenViewController: UIViewController, UITableViewDataSource, U
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         view.addSubview(tableView)
-     //   presenter?.viewDidLoad()
+        presenter?.viewDidLoad()
     //    MainScreenWireFrame().buildModule(module: self)
         title = "VIPER Project"
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return presenter?.numberOfRowInSection() ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "test"
+        cell.textLabel?.text = presenter?.textLabel(indexPath: indexPath)
         return cell
     }
-
 }
 
 // MARK: - MainScreenViewProtocol

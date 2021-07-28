@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol MainScreenWireFrameProtocol: AnyObject {
-    func buildModule() -> UINavigationController
+    func buildModule() -> UIViewController
 }
 
 final class MainScreenWireFrame {
@@ -18,22 +18,20 @@ final class MainScreenWireFrame {
 
 // MARK: - MainScreenWireFrameProtocol
 extension MainScreenWireFrame: MainScreenWireFrameProtocol {
-    func buildModule() -> UINavigationController {
-        var storyboard: UIStoryboard {
-            return UIStoryboard(name: "Main", bundle: Bundle.main)
-        }
+    func buildModule() -> UIViewController {
+        print("build up main screen module")
 
-        let presenter: MainScreenPresenterProtocol = MainScreenPresenter()
-        let interactor: MainScreenInteractorProtocol = MainScreenInteractor()
-        let router: MainScreenRouterProtocol = MainScreenRouter()
-      //  module.presenter = presenter
-        // presenter.view = module
-     //   presenter.interactor = interactor
-      //  presenter.router = router
-      //  interactor.presenter = presenter
-        print("create main screen module")
-       let mainScreenViewController = MainScreenViewController()
-        let navigationController = UINavigationController(rootViewController: mainScreenViewController)
-        return navigationController
+        let mainScreenViewController = MainScreenViewController()
+        let presenter = MainScreenPresenter()
+        let interactor = MainScreenInteractor()
+        let router = MainScreenRouter()
+
+        mainScreenViewController.presenter = presenter
+        presenter.view = mainScreenViewController
+        presenter.interactor = interactor
+        presenter.router = router
+        interactor.presenter = presenter
+
+        return mainScreenViewController
     }
 }
