@@ -20,6 +20,7 @@ struct NetworkManager {
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         return request
     }
+
     private func executeRequest<T: Codable>(request: URLRequest, completion: ((T?, Error?) -> Void)?) {
         let session = URLSession(configuration: .default)
         session.dataTask(with: request) { (data, _, error ) in
@@ -37,7 +38,9 @@ struct NetworkManager {
         }
         .resume()
     }
-    typealias ObjectCompletionClosure = (([Object]?, Error?) -> Void)
+
+    typealias ObjectCompletionClosure = (([PictureObject]?, Error?) -> Void)
+
     public func fetchData(completion: ObjectCompletionClosure?) {
         guard let request = createRequest(url: "https://jsonplaceholder.typicode.com/photos")
         else { completion?(nil, NetworkError.invalidURL)

@@ -8,21 +8,21 @@
 import Foundation
 
 protocol MainScreenInteractorProtocol: AnyObject {
-    var presenter: MainScreenPresenterProtocol? { get set }
     func retrieveData()
 }
 
-class MainScreenInteractor: MainScreenInteractorProtocol {
-  var objects: [Object]?
+final class MainScreenInteractor {
+    private var objects: [PictureObject]?
     /*{
-        var tempobjects = [Object]()
-        for item in testData {
-            tempobjects.append(item)
-        }
-        return tempobjects
-    }
-    */
-    weak var presenter: MainScreenPresenterProtocol?
+     var tempobjects = [Object]()
+     for item in testData {
+     tempobjects.append(item)
+     }
+     return tempobjects
+     }
+     */
+    private weak var presenter: MainScreenPresenterProtocol?
+
     func network() {
         NetworkManager().fetchData { data, error in
             if let data = data {
@@ -39,6 +39,10 @@ class MainScreenInteractor: MainScreenInteractorProtocol {
         }
         print("number \(objects?.count)")
     }
+}
+
+// MARK: - MainScreenInteractorProtocol
+extension MainScreenInteractor: MainScreenInteractorProtocol {
     func retrieveData() {
         network()
         presenter?.didRetrieveData(objects: objects ?? [])

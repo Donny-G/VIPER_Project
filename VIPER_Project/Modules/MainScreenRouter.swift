@@ -12,6 +12,11 @@ protocol MainScreenRouterProtocol: AnyObject {
     // func presentDetailView(from view: MainScreenViewProtocol, for object: Object)
 }
 
-class MainScreenRouter: MainScreenRouterProtocol {
+final class MainScreenRouter {
+
+}
+
+// MARK: - MainScreenRouterProtocol
+extension MainScreenRouter: MainScreenRouterProtocol {
 
 }

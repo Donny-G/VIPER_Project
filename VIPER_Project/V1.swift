@@ -7,9 +7,9 @@
 
 import Foundation
 
-//https://jsonplaceholder.typicode.com/photos
+// https://jsonplaceholder.typicode.com/photos
 
-struct Object: Codable {
+struct PictureObject: Codable {
     let id: Int
     let title: String
     let url: String
@@ -19,4 +19,4 @@ struct Object: Codable {
     }
 }
 
- typealias ObjectModel = [Object]
+ typealias PictureObjectModel = [PictureObject]
