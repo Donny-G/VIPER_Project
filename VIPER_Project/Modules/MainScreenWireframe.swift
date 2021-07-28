@@ -6,20 +6,38 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MainScreenWireFrameProtocol: AnyObject {
-    func buildModule(module: MainScreenViewController)
+    func buildModule() -> UINavigationController
 }
 
-class MainScreenWireFrame: MainScreenWireFrameProtocol {
-    func buildModule(module: MainScreenViewController) {
+final class MainScreenWireFrame {
+
+}
+
+// MARK: - MainScreenWireFrameProtocol
+extension MainScreenWireFrame: MainScreenWireFrameProtocol {
+    func buildModule() -> UINavigationController {
+        var storyboard: UIStoryboard {
+            return UIStoryboard(name: "Main", bundle: Bundle.main)
+        }
+
         let presenter: MainScreenPresenterProtocol = MainScreenPresenter()
         let interactor: MainScreenInteractorProtocol = MainScreenInteractor()
         let router: MainScreenRouterProtocol = MainScreenRouter()
-        module.presenter = presenter
-        presenter.view = module
-        presenter.interactor = interactor
-        presenter.router = router
-        interactor.presenter = presenter
+      //  module.presenter = presenter
+        // presenter.view = module
+     //   presenter.interactor = interactor
+      //  presenter.router = router
+      //  interactor.presenter = presenter
+        print("create main screen module")
+
+        guard let navigationController = storyboard.instantiateViewController(
+                identifier: "NavigationController") as? UINavigationController else { fatalError() }
+        guard let viewController = navigationController.topViewController
+                as? MainScreenViewController else { fatalError()}
+
+        return navigationController
     }
 }

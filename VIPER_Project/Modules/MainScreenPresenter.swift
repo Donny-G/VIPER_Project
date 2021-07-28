@@ -8,24 +8,31 @@
 import Foundation
 
  protocol MainScreenPresenterProtocol: AnyObject {
-    var interactor: MainScreenInteractorProtocol? { get set }
-    var router: MainScreenRouterProtocol? { get set }
-    var view: MainScreenViewProtocol? { get set }
+    func viewDidLoad()
     func sendRequestForDataToInteractor()
-    func didRetrieveData(objects: [Object])
+    func didRetrieveData(objects: [PictureObject])
 }
 
-class MainScreenPresenter: MainScreenPresenterProtocol {
-    var test = [String]()
-    var interactor: MainScreenInteractorProtocol?
-    var router: MainScreenRouterProtocol?
-    weak var view: MainScreenViewProtocol?
+final class MainScreenPresenter {
+    private var test = [String]()
+    private var interactor: MainScreenInteractorProtocol?
+    private var router: MainScreenRouterProtocol?
+    private weak var view: MainScreenViewProtocol?
+}
+
+// MARK: - MainScreenPresenterProtocol
+extension MainScreenPresenter: MainScreenPresenterProtocol {
     func sendRequestForDataToInteractor() {
         interactor?.retrieveData()
     }
-    func didRetrieveData(objects: [Object]) {
-        view?.uploadDataFromPresenter(objects: objects)
+
+    func didRetrieveData(objects: [PictureObject]) {
+      //  view?.uploadDataFromPresenter(objects: objects)
         self.test = objects.compactMap {$0.title}
         print("pres \(test.count)")
+    }
+
+    func viewDidLoad() {
+
     }
 }
