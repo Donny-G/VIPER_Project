@@ -8,43 +8,26 @@
 import Foundation
 
 protocol MainScreenInteractorProtocol: AnyObject {
-    func retrieveData()
+    func loadPicturesList()
 }
 
 final class MainScreenInteractor {
-    private var objects: [PictureObject]?
-    /*{
-     var tempobjects = [Object]()
-     for item in testData {
-     tempobjects.append(item)
-     }
-     return tempobjects
-     }
-     */
-    private weak var presenter: MainScreenPresenterProtocol?
+    private var mocPictureList: [PictureObject] = [PictureObject(id: 678, title:
+                                                                    "accusamus beatae ad facilis cum similique quit",
+                                                            url: "https://via.placeholder.com/600/92c952"),
+                                                  PictureObject(id: 465, title: "reprehenderit est deseruntvelit ipsam",
+                                                                url: "https://via.placeholder.com/600/771796"),
+                                                  PictureObject(id: 98,
+                                                                title: "officia porro iure quia iusto qui ipsa ut modi",
+                                                                url: "https://via.placeholder.com/600/24f355")]
 
-    func network() {
-        NetworkManager().fetchData { data, error in
-            if let data = data {
-                for item in data {
-                    self.objects?.append(item)
-                    // сами обьекты мы видим
-                    print(item.self)
-                    // но в массив не попадают
-                    print(self.objects?.count)
-                }
-            } else {
-                print(error)
-            }
-        }
-        print("number \(objects?.count)")
-    }
+    weak var presenter: MainScreenPresenterProtocol?
 }
 
 // MARK: - MainScreenInteractorProtocol
 extension MainScreenInteractor: MainScreenInteractorProtocol {
-    func retrieveData() {
-        network()
-        presenter?.didRetrieveData(objects: objects ?? [])
+    func loadPicturesList() {
+        print("load pictures and send back to presenter")
+        presenter?.feedbackFromInteractor(pictures: mocPictureList)
     }
 }

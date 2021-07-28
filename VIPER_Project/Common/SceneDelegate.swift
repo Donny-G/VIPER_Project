@@ -36,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let navigationViewController = UINavigationController()
         window?.rootViewController = navigationViewController
-        navigationViewController.pushViewController(MainScreenViewController(), animated: false)
+        navigationViewController.pushViewController(MainScreenWireFrame().buildModule(), animated: false)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
