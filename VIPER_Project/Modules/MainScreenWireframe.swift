@@ -32,12 +32,8 @@ extension MainScreenWireFrame: MainScreenWireFrameProtocol {
       //  presenter.router = router
       //  interactor.presenter = presenter
         print("create main screen module")
-
-        guard let navigationController = storyboard.instantiateViewController(
-                identifier: "NavigationController") as? UINavigationController else { fatalError() }
-        guard let viewController = navigationController.topViewController
-                as? MainScreenViewController else { fatalError()}
-
+       let mainScreenViewController = MainScreenViewController()
+        let navigationController = UINavigationController(rootViewController: mainScreenViewController)
         return navigationController
     }
 }

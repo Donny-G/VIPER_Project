@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
                     launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 =======
@@ -20,14 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 >>>>>>> 7b08c27... 2-Main-screen: update code style + corrections in VC
 
+=======
+>>>>>>> 4f822a7... 2-Main-screen: delete storyboard, set SceneDelegate, update MainViewController
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
                      launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 >>>>>>> 050eb53... 2-Main-screen: corrections of VIPER architecture + Network Class
         // Override point for customization after application launch.
-        window = UIWindow()
-        window?.backgroundColor = .white
-        window?.rootViewController = MainScreenWireFrame().buildModule()
-        window?.makeKeyAndVisible()
         return true
     }
 

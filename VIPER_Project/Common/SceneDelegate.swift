@@ -27,6 +27,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // (see `application:configurationForConnectingSceneSession` instead).
 >>>>>>> 050eb53... 2-Main-screen: corrections of VIPER architecture + Network Class
         guard (scene as? UIWindowScene) != nil else { return }
+
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        window?.backgroundColor = .white
+        window?.makeKeyAndVisible()
+
+        let navigationViewController = UINavigationController()
+        window?.rootViewController = navigationViewController
+        navigationViewController.pushViewController(MainScreenViewController(), animated: false)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
