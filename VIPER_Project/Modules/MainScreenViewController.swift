@@ -24,8 +24,9 @@ final class MainScreenViewController: UIViewController, UITableViewDataSource, U
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         view.addSubview(tableView)
+
         presenter?.viewDidLoad()
-    //    MainScreenWireFrame().buildModule(module: self)
+
         title = "VIPER Project"
     }
 

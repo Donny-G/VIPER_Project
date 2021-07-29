@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MainScreenInteractorProtocol: AnyObject {
-    func loadPicturesList()
+    func loadPicturesList(completion: ([PictureObject]) -> Void)
 }
 
 final class MainScreenInteractor {
@@ -19,15 +19,16 @@ final class MainScreenInteractor {
                                                                 url: "https://via.placeholder.com/600/771796"),
                                                   PictureObject(id: 98,
                                                                 title: "officia porro iure quia iusto qui ipsa ut modi",
+                                                                url: "https://via.placeholder.com/600/24f355"),
+                                                  PictureObject(id: 98,
+                                                                title: "officia porro iure quia iusto qui ipsa ut modi",
                                                                 url: "https://via.placeholder.com/600/24f355")]
-
-    weak var presenter: MainScreenPresenterProtocol?
 }
 
 // MARK: - MainScreenInteractorProtocol
 extension MainScreenInteractor: MainScreenInteractorProtocol {
-    func loadPicturesList() {
-        print("load pictures and send back to presenter")
-        presenter?.feedbackFromInteractor(pictures: mocPictureList)
+    func loadPicturesList(completion: ([PictureObject]) -> Void) {
+        print("load pictures and send back")
+        completion(mocPictureList)
     }
 }
