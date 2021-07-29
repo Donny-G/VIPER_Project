@@ -33,6 +33,11 @@
 					<string>Default Configuration</string>
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+<<<<<<< HEAD
+=======
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+>>>>>>> ac21b422883d680865099c9b7876fe772bdb6495
 				</dict>
 			</array>
 		</dict>
@@ -41,6 +46,11 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+<<<<<<< HEAD
+=======
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+>>>>>>> ac21b422883d680865099c9b7876fe772bdb6495
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
