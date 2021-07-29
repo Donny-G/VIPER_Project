@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B835E26AF01BE0082937E /* MainScreenWireframe.swift */; };
 		056B836126AF065F0082937E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B836026AF065F0082937E /* NetworkManager.swift */; };
+		0584AEE326B2D88A0068E184 /* DetailViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE226B2D88A0068E184 /* DetailViewViewController.swift */; };
+		0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE426B2D8AA0068E184 /* DetailViewPresenter.swift */; };
+		0584AEE726B2D8C90068E184 /* DetailViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE626B2D8C90068E184 /* DetailViewInteractor.swift */; };
+		0584AEE926B2D8DF0068E184 /* DetailViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE826B2D8DF0068E184 /* DetailViewRouter.swift */; };
+		0584AEEB26B2D8FC0068E184 /* DetailViewWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEEA26B2D8FC0068E184 /* DetailViewWireFrame.swift */; };
 		059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521726AAC2420004997C /* MainScreenPresenter.swift */; };
 		059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521926AAC2710004997C /* MainScreenInteractor.swift */; };
 		059B521C26AAC2920004997C /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521B26AAC2920004997C /* MainScreenRouter.swift */; };
@@ -43,6 +48,11 @@
 /* Begin PBXFileReference section */
 		056B835E26AF01BE0082937E /* MainScreenWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenWireframe.swift; sourceTree = "<group>"; };
 		056B836026AF065F0082937E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0584AEE226B2D88A0068E184 /* DetailViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewViewController.swift; sourceTree = "<group>"; };
+		0584AEE426B2D8AA0068E184 /* DetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPresenter.swift; sourceTree = "<group>"; };
+		0584AEE626B2D8C90068E184 /* DetailViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewInteractor.swift; sourceTree = "<group>"; };
+		0584AEE826B2D8DF0068E184 /* DetailViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewRouter.swift; sourceTree = "<group>"; };
+		0584AEEA26B2D8FC0068E184 /* DetailViewWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewWireFrame.swift; sourceTree = "<group>"; };
 		059B521726AAC2420004997C /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
 		059B521926AAC2710004997C /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
 		059B521B26AAC2920004997C /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
@@ -88,6 +98,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0584AEE126B2D8470068E184 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				0584AEE226B2D88A0068E184 /* DetailViewViewController.swift */,
+				0584AEE426B2D8AA0068E184 /* DetailViewPresenter.swift */,
+				0584AEE626B2D8C90068E184 /* DetailViewInteractor.swift */,
+				0584AEE826B2D8DF0068E184 /* DetailViewRouter.swift */,
+				0584AEEA26B2D8FC0068E184 /* DetailViewWireFrame.swift */,
+			);
+			name = DetailView;
+			sourceTree = "<group>";
+		};
 		059B521226AABFD20004997C /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +121,7 @@
 		059B521326AAC0F30004997C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0584AEE126B2D8470068E184 /* DetailView */,
 				059B521426AAC1140004997C /* MainScreen */,
 			);
 			path = Modules;
@@ -346,15 +369,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				059B521C26AAC2920004997C /* MainScreenRouter.swift in Sources */,
+				0584AEEB26B2D8FC0068E184 /* DetailViewWireFrame.swift in Sources */,
 				05BBF46626A9536B005CBB89 /* MainScreenViewController.swift in Sources */,
 				05BBF46226A9536B005CBB89 /* AppDelegate.swift in Sources */,
 				056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */,
 				056B836126AF065F0082937E /* NetworkManager.swift in Sources */,
 				05BBF46426A9536B005CBB89 /* SceneDelegate.swift in Sources */,
+				0584AEE726B2D8C90068E184 /* DetailViewInteractor.swift in Sources */,
 				059B522026AAD5700004997C /* V1.swift in Sources */,
+				0584AEE926B2D8DF0068E184 /* DetailViewRouter.swift in Sources */,
 				059B522226AAD6020004997C /* V2.swift in Sources */,
 				059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */,
 				059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */,
+				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
+				0584AEE326B2D88A0068E184 /* DetailViewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol MainScreenRouterProtocol: AnyObject {
-    // func presentDetailView(from view: MainScreenViewProtocol, for object: Object)
+    func presentDetailView(from view: UIViewController)
 }
 
 final class MainScreenRouter {
@@ -18,5 +18,9 @@ final class MainScreenRouter {
 
 // MARK: - MainScreenRouterProtocol
 extension MainScreenRouter: MainScreenRouterProtocol {
+    func presentDetailView(from view: UIViewController) {
+        let detailViewController = DetailViewRouter().buildDetailViewModule()
 
+        view.navigationController?.pushViewController(detailViewController, animated: true)
+    }
 }
