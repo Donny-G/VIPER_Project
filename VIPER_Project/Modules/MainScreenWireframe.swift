@@ -27,7 +27,7 @@ extension MainScreenWireFrame: MainScreenWireFrameProtocol {
         let router = MainScreenRouter()
 
         mainScreenViewController.presenter = presenter
-        presenter.view = mainScreenViewController
+       //  presenter.view = mainScreenViewController
         presenter.interactor = interactor
         presenter.router = router
 

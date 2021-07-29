@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
  protocol MainScreenPresenterProtocol: AnyObject {
     func viewDidLoad()
     func numberOfRowInSection() -> Int
     func textLabel(indexPath: IndexPath) -> String?
+    func didSelectRowAt(from view: UIViewController)
 }
 
 final class MainScreenPresenter {
@@ -42,5 +44,9 @@ extension MainScreenPresenter: MainScreenPresenterProtocol {
     func textLabel(indexPath: IndexPath) -> String? {
         guard let pictures = self.pictures else { return nil }
         return pictures[indexPath.row]
+    }
+
+    func didSelectRowAt(from view: UIViewController) {
+        router?.presentDetailView(from: view)
     }
 }

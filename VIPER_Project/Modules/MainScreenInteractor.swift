@@ -12,17 +12,35 @@ protocol MainScreenInteractorProtocol: AnyObject {
 }
 
 final class MainScreenInteractor {
-    private var mocPictureList: [PictureObject] = [PictureObject(id: 678, title:
-                                                                    "accusamus beatae ad facilis cum similique quit",
-                                                            url: "https://via.placeholder.com/600/92c952"),
-                                                  PictureObject(id: 465, title: "reprehenderit est deseruntvelit ipsam",
-                                                                url: "https://via.placeholder.com/600/771796"),
-                                                  PictureObject(id: 98,
-                                                                title: "officia porro iure quia iusto qui ipsa ut modi",
-                                                                url: "https://via.placeholder.com/600/24f355"),
-                                                  PictureObject(id: 98,
-                                                                title: "officia porro iure quia iusto qui ipsa ut modi",
-                                                                url: "https://via.placeholder.com/600/24f355")]
+    private var mocPictureList: [PictureObject] = [PictureObject(id: 1, title:
+                                                                    """
+aerial view of green trees during daytime
+""",
+                                                                 url: """
+aerial view of green trees during daytime
+"""),
+                                                   PictureObject(id: 2,
+                                                                 title: """
+white and pink flower in tilt shift lens
+""",
+                                                                 url: """
+white and pink flower in tilt shift lens
+"""),
+                                                   PictureObject(id: 3,
+                                                                 title:
+                                                                    """
+black and white ceramic mugs on brown wooden table
+""",
+                                                                 url: """
+black and white ceramic mugs on brown wooden table
+"""),
+                                                   PictureObject(id: 4,
+                                                                 title: """
+white concrete building under blue sky during daytime
+""",
+                                                                 url: """
+white concrete building under blue sky during daytime
+""")]
 }
 
 // MARK: - MainScreenInteractorProtocol

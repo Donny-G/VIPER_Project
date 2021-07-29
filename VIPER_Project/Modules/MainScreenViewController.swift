@@ -39,6 +39,10 @@ final class MainScreenViewController: UIViewController, UITableViewDataSource, U
         cell.textLabel?.text = presenter?.textLabel(indexPath: indexPath)
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelectRowAt(from: self)
+    }
 }
 
 // MARK: - MainScreenViewProtocol
