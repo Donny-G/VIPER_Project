@@ -9,14 +9,11 @@ import Foundation
 import UIKit
 
 protocol MainScreenRouterProtocol: AnyObject {
-    // func presentDetailView(from view: MainScreenViewProtocol, for object: Object)
 }
 
 final class MainScreenRouter {
-
 }
 
 // MARK: - MainScreenRouterProtocol
 extension MainScreenRouter: MainScreenRouterProtocol {
-
 }
