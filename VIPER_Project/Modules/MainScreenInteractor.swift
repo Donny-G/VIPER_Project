@@ -28,7 +28,6 @@ final class MainScreenInteractor {
 // MARK: - MainScreenInteractorProtocol
 extension MainScreenInteractor: MainScreenInteractorProtocol {
     func loadPicturesList(completion: ([PictureObject]) -> Void) {
-        print("load pictures and send back")
         completion(mocPictureList)
     }
 }
