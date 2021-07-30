@@ -6,30 +6,37 @@
 //
 
 import Foundation
+import UIKit
 
  protocol MainScreenPresenterProtocol: AnyObject {
-    func viewDidLoad()
+    func viewDidLoad(tableView: inout UITableView, viewController: UIViewController)
     func numberOfRowInSection() -> Int
     func textLabel(indexPath: IndexPath) -> String?
+
+    func setRouter(router: MainScreenRouter)
+    func setInteractor(interactor: MainScreenInteractor)
 }
 
 final class MainScreenPresenter {
     private var pictures: [String]?
 
-    var interactor: MainScreenInteractorProtocol?
-    var router: MainScreenRouterProtocol?
-    weak var view: MainScreenViewProtocol?
+    private var interactor: MainScreenInteractorProtocol?
+    private var router: MainScreenRouterProtocol?
 }
 
 // MARK: - MainScreenPresenterProtocol
 extension MainScreenPresenter: MainScreenPresenterProtocol {
 
-    func viewDidLoad() {
-        print("main view is loaded and ready for data")
-        let handler: ([PictureObject]) -> Void = {
-            print("presenter receives data from interactor")
-            self.pictures = $0.compactMap {$0.title}
-            self.view?.feedbackFromPresenter()
+    func viewDidLoad( tableView: inout UITableView, viewController: UIViewController) {
+        tableView = UITableView(frame: viewController.view.bounds, style: UITableView.Style.plain)
+        tableView.delegate = viewController as? UITableViewDelegate
+        tableView.dataSource = viewController as? UITableViewDataSource
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        viewController.view.addSubview(tableView)
+
+        let handler: ([PictureObject]) -> Void = { [weak self] in
+            self?.pictures = $0.compactMap {$0.title}
+            tableView.reloadData()
         }
         interactor?.loadPicturesList(completion: handler)
     }
@@ -42,5 +49,13 @@ extension MainScreenPresenter: MainScreenPresenterProtocol {
     func textLabel(indexPath: IndexPath) -> String? {
         guard let pictures = self.pictures else { return nil }
         return pictures[indexPath.row]
+    }
+
+    func setInteractor(interactor: MainScreenInteractor) {
+        self.interactor = interactor
+    }
+
+    func setRouter(router: MainScreenRouter) {
+        self.router = router
     }
 }
