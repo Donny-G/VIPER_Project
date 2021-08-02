@@ -25,5 +25,3 @@ struct Urls: Codable {
     let raw, full, regular, small: String
     let thumb: String
 }
-
-typealias PicturesModel = [Picture]

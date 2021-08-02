@@ -18,5 +18,3 @@ struct PictureObject: Codable {
         case id, title, url
     }
 }
-
- typealias PictureObjectModel = [PictureObject]

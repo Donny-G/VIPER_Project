@@ -18,6 +18,8 @@
 		0584AEE726B2D8C90068E184 /* DetailViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE626B2D8C90068E184 /* DetailViewInteractor.swift */; };
 		0584AEE926B2D8DF0068E184 /* DetailViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE826B2D8DF0068E184 /* DetailViewRouter.swift */; };
 		0584AEEB26B2D8FC0068E184 /* DetailViewWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEEA26B2D8FC0068E184 /* DetailViewWireFrame.swift */; };
+		056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B835E26AF01BE0082937E /* MainScreenWireframe.swift */; };
+		056B836126AF065F0082937E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B836026AF065F0082937E /* NetworkManager.swift */; };
 		059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521726AAC2420004997C /* MainScreenPresenter.swift */; };
 		059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521926AAC2710004997C /* MainScreenInteractor.swift */; };
 		059B521C26AAC2920004997C /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521B26AAC2920004997C /* MainScreenRouter.swift */; };
@@ -61,6 +63,8 @@
 		0584AEE626B2D8C90068E184 /* DetailViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewInteractor.swift; sourceTree = "<group>"; };
 		0584AEE826B2D8DF0068E184 /* DetailViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewRouter.swift; sourceTree = "<group>"; };
 		0584AEEA26B2D8FC0068E184 /* DetailViewWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewWireFrame.swift; sourceTree = "<group>"; };
+		056B835E26AF01BE0082937E /* MainScreenWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenWireframe.swift; sourceTree = "<group>"; };
+		056B836026AF065F0082937E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		059B521726AAC2420004997C /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
 		059B521926AAC2710004997C /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
 		059B521B26AAC2920004997C /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
@@ -395,10 +399,10 @@
 				059B522026AAD5700004997C /* V1.swift in Sources */,
 				0584AEE926B2D8DF0068E184 /* DetailViewRouter.swift in Sources */,
 				059B522226AAD6020004997C /* V2.swift in Sources */,
-				059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */,
-				059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */,
 				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
 				0584AEE326B2D88A0068E184 /* DetailViewViewController.swift in Sources */,
+				059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */,
+				059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +592,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HT65N3ZFYQ;
 				INFOPLIST_FILE = VIPER_Project/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

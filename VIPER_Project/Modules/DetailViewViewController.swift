@@ -16,10 +16,12 @@ final class DetailViewViewController: UIViewController {
 
     private var imageView = UIImageView()
     private  var initialCenter = CGPoint()
+    var presenter: DetailViewPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialImageConfig()
+       // initialImageConfig()
+        presenter?.viewDidLoad(imageView: &imageView, viewController: self)
 
         pinchGestureRecognizerInit()
         panGestureRecognizerInit()

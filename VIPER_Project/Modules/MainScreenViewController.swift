@@ -19,13 +19,7 @@ final class MainScreenViewController: UIViewController, UITableViewDataSource, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView = UITableView(frame: self.view.bounds, style: UITableView.Style.plain)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        view.addSubview(tableView)
-
-        presenter?.viewDidLoad()
+        presenter?.viewDidLoad(tableView: &tableView, viewController: self)
 
         title = "VIPER Project"
     }
@@ -41,14 +35,14 @@ final class MainScreenViewController: UIViewController, UITableViewDataSource, U
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.didSelectRowAt(from: self)
+        presenter?.didSelectRowAt(from: self, index: indexPath.row)
     }
+
 }
 
 // MARK: - MainScreenViewProtocol
 extension MainScreenViewController: MainScreenViewProtocol {
     func feedbackFromPresenter() {
-        print("feedbackFromPresenter")
-        self.tableView.reloadData()
+        // self.tableView.reloadData()
     }
 }

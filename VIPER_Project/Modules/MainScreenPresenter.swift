@@ -9,10 +9,11 @@ import Foundation
 import UIKit
 
  protocol MainScreenPresenterProtocol: AnyObject {
-    func viewDidLoad()
+
+    func didSelectRowAt(from view: UIViewController, index: Int)
+    func viewDidLoad(tableView: inout UITableView, viewController: UIViewController)
     func numberOfRowInSection() -> Int
     func textLabel(indexPath: IndexPath) -> String?
-    func didSelectRowAt(from view: UIViewController)
 }
 
 final class MainScreenPresenter {
@@ -20,18 +21,22 @@ final class MainScreenPresenter {
 
     var interactor: MainScreenInteractorProtocol?
     var router: MainScreenRouterProtocol?
-    weak var view: MainScreenViewProtocol?
+    // weak var view: MainScreenViewController?
 }
 
 // MARK: - MainScreenPresenterProtocol
 extension MainScreenPresenter: MainScreenPresenterProtocol {
 
-    func viewDidLoad() {
-        print("main view is loaded and ready for data")
-        let handler: ([PictureObject]) -> Void = {
-            print("presenter receives data from interactor")
-            self.pictures = $0.compactMap {$0.title}
-            self.view?.feedbackFromPresenter()
+    func viewDidLoad( tableView: inout UITableView, viewController: UIViewController) {
+        tableView = UITableView(frame: viewController.view.bounds, style: UITableView.Style.plain)
+        tableView.delegate = viewController as? UITableViewDelegate
+        tableView.dataSource = viewController as? UITableViewDataSource
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        viewController.view.addSubview(tableView)
+
+        let handler: ([PictureObject]) -> Void = { [weak self] in
+            self?.pictures = $0.compactMap {$0.title}
+            tableView.reloadData()
         }
         interactor?.loadPicturesList(completion: handler)
     }
@@ -46,7 +51,13 @@ extension MainScreenPresenter: MainScreenPresenterProtocol {
         return pictures[indexPath.row]
     }
 
-    func didSelectRowAt(from view: UIViewController) {
-        router?.presentDetailView(from: view)
+    func didSelectRowAt(from view: UIViewController, index: Int) {
+        let handler: (UIImage) -> Void = {image in
+            print("from didselect \(image)")
+            self.router?.presentDetailView(from: view)
+        }
+        interactor?.loadImage(index: index, completion: handler)
+       // router?.presentDetailView(from: view)
     }
+
 }

@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MainScreenInteractorProtocol: AnyObject {
     func loadPicturesList(completion: ([PictureObject]) -> Void)
+    func loadImage(index: Int, completion: (UIImage) -> Void)
 }
 
 final class MainScreenInteractor {
@@ -46,7 +48,20 @@ white concrete building under blue sky during daytime
 // MARK: - MainScreenInteractorProtocol
 extension MainScreenInteractor: MainScreenInteractorProtocol {
     func loadPicturesList(completion: ([PictureObject]) -> Void) {
-        print("load pictures and send back")
         completion(mocPictureList)
     }
-}
+
+    func loadImage(index: Int, completion: (UIImage) -> Void) {
+        let imageName = mocPictureList[index].url
+        let fileManager = FileManager.default
+        guard  let path = Bundle.main.resourcePath else { fatalError() }
+        guard let items = try? fileManager.contentsOfDirectory(atPath: path) else { fatalError() }
+        for item in items {
+            if item.hasPrefix(imageName) {
+                print(item)
+                guard let returnImage = UIImage(named: item) else { fatalError()}
+                    completion(returnImage)
+                }
+            }
+        }
+    }

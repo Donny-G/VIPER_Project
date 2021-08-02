@@ -13,7 +13,6 @@ protocol MainScreenRouterProtocol: AnyObject {
 }
 
 final class MainScreenRouter {
-
 }
 
 // MARK: - MainScreenRouterProtocol
