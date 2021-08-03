@@ -37,7 +37,6 @@ final class MainScreenViewController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.didSelectRowAt(from: self, index: indexPath.row)
     }
-
 }
 
 // MARK: - MainScreenViewProtocol

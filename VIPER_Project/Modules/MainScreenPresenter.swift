@@ -14,6 +14,7 @@ import UIKit
     func viewDidLoad(tableView: inout UITableView, viewController: UIViewController)
     func numberOfRowInSection() -> Int
     func textLabel(indexPath: IndexPath) -> String?
+    func didSelectRowAt(from view: UIViewController)
 }
 
 final class MainScreenPresenter {
@@ -58,6 +59,10 @@ extension MainScreenPresenter: MainScreenPresenterProtocol {
         }
         interactor?.loadImage(index: index, completion: handler)
        // router?.presentDetailView(from: view)
+    }
+
+    func didSelectRowAt(from view: UIViewController) {
+        router?.presentDetailView(from: view)
     }
 
 }
