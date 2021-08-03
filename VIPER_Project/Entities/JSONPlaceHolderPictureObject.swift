@@ -9,7 +9,7 @@ import Foundation
 
 // https://jsonplaceholder.typicode.com/photos
 
-struct PictureObject: Codable {
+struct JSONPlaceHolderPictureObject: Codable {
     let id: Int
     let title: String
     let url: String
