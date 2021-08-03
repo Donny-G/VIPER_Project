@@ -39,7 +39,7 @@ struct NetworkManager {
         .resume()
     }
 
-    typealias ObjectCompletionClosure = (([PictureObject]?, Error?) -> Void)
+    typealias ObjectCompletionClosure = (([JSONPlaceHolderPictureObject]?, Error?) -> Void)
 
     public func fetchData(completion: ObjectCompletionClosure?) {
         guard let request = createRequest(url: "https://jsonplaceholder.typicode.com/photos")
