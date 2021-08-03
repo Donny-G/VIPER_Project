@@ -1,0 +1,5 @@
+# Xcode
+#
+## Other
+*.xcuserstate
+VIPER_Project.xcodeproj/xcuserdata
