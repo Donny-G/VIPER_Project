@@ -9,26 +9,26 @@ import Foundation
 import UIKit
 
 protocol MainScreenInteractorProtocol: AnyObject {
-    func loadPicturesList(completion: ([PictureObject]) -> Void)
+    func loadPicturesList(completion: ([JSONPlaceHolderPictureObject]) -> Void)
     func loadImage(index: Int, completion: (UIImage) -> Void)
 }
 
 final class MainScreenInteractor {
-    private var mocPictureList: [PictureObject] = [PictureObject(id: 1, title:
+    private var mocPictureList: [JSONPlaceHolderPictureObject] = [JSONPlaceHolderPictureObject(id: 1, title:
                                                                     """
 aerial view of green trees during daytime
 """,
                                                                  url: """
 aerial view of green trees during daytime
 """),
-                                                   PictureObject(id: 2,
+                                                                  JSONPlaceHolderPictureObject(id: 2,
                                                                  title: """
 white and pink flower in tilt shift lens
 """,
                                                                  url: """
 white and pink flower in tilt shift lens
 """),
-                                                   PictureObject(id: 3,
+                                                                  JSONPlaceHolderPictureObject(id: 3,
                                                                  title:
                                                                     """
 black and white ceramic mugs on brown wooden table
@@ -36,7 +36,7 @@ black and white ceramic mugs on brown wooden table
                                                                  url: """
 black and white ceramic mugs on brown wooden table
 """),
-                                                   PictureObject(id: 4,
+                                                                  JSONPlaceHolderPictureObject(id: 4,
                                                                  title: """
 white concrete building under blue sky during daytime
 """,
@@ -47,7 +47,8 @@ white concrete building under blue sky during daytime
 
 // MARK: - MainScreenInteractorProtocol
 extension MainScreenInteractor: MainScreenInteractorProtocol {
-    func loadPicturesList(completion: ([PictureObject]) -> Void) {
+
+    func loadPicturesList(completion: ([JSONPlaceHolderPictureObject]) -> Void) {
         completion(mocPictureList)
     }
 

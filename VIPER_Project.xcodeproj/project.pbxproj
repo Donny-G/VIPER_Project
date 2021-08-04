@@ -11,13 +11,9 @@
 		052FE1DA26B7F9CE00F8CEF0 /* black and white ceramic mugs on brown wooden table.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 052FE1D626B7F9CE00F8CEF0 /* black and white ceramic mugs on brown wooden table.jpeg */; };
 		052FE1DB26B7F9CE00F8CEF0 /* aerial view of green trees during daytime.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 052FE1D726B7F9CE00F8CEF0 /* aerial view of green trees during daytime.jpeg */; };
 		052FE1DC26B7F9CE00F8CEF0 /* white concrete building under blue sky during daytime.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 052FE1D826B7F9CE00F8CEF0 /* white concrete building under blue sky during daytime.jpeg */; };
-		056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B835E26AF01BE0082937E /* MainScreenWireframe.swift */; };
-		056B836126AF065F0082937E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B836026AF065F0082937E /* NetworkManager.swift */; };
-		0584AEE326B2D88A0068E184 /* DetailViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE226B2D88A0068E184 /* DetailViewViewController.swift */; };
-		0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE426B2D8AA0068E184 /* DetailViewPresenter.swift */; };
-		0584AEE726B2D8C90068E184 /* DetailViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE626B2D8C90068E184 /* DetailViewInteractor.swift */; };
-		0584AEE926B2D8DF0068E184 /* DetailViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE826B2D8DF0068E184 /* DetailViewRouter.swift */; };
-		0584AEEB26B2D8FC0068E184 /* DetailViewWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEEA26B2D8FC0068E184 /* DetailViewWireFrame.swift */; };
+		053D1D0E26B93EC300ACCC22 /* MainScreenEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D1D0D26B93EC300ACCC22 /* MainScreenEnum.swift */; };
+		0550946326BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550946226BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift */; };
+		0550946526BA6816008F02A4 /* UnsplashPictureObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550946426BA6816008F02A4 /* UnsplashPictureObject.swift */; };
 		056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B835E26AF01BE0082937E /* MainScreenWireframe.swift */; };
 		056B836126AF065F0082937E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B836026AF065F0082937E /* NetworkManager.swift */; };
 		0584AEE326B2D88A0068E184 /* DetailViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE226B2D88A0068E184 /* DetailViewViewController.swift */; };
@@ -28,8 +24,6 @@
 		059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521726AAC2420004997C /* MainScreenPresenter.swift */; };
 		059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521926AAC2710004997C /* MainScreenInteractor.swift */; };
 		059B521C26AAC2920004997C /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521B26AAC2920004997C /* MainScreenRouter.swift */; };
-		059B522026AAD5700004997C /* V1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521F26AAD5700004997C /* V1.swift */; };
-		059B522226AAD6020004997C /* V2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B522126AAD6020004997C /* V2.swift */; };
 		05BBF46226A9536B005CBB89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF46126A9536B005CBB89 /* AppDelegate.swift */; };
 		05BBF46426A9536B005CBB89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF46326A9536B005CBB89 /* SceneDelegate.swift */; };
 		05BBF46626A9536B005CBB89 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF46526A9536B005CBB89 /* MainScreenViewController.swift */; };
@@ -61,13 +55,9 @@
 		052FE1D626B7F9CE00F8CEF0 /* black and white ceramic mugs on brown wooden table.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "black and white ceramic mugs on brown wooden table.jpeg"; sourceTree = "<group>"; };
 		052FE1D726B7F9CE00F8CEF0 /* aerial view of green trees during daytime.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "aerial view of green trees during daytime.jpeg"; sourceTree = "<group>"; };
 		052FE1D826B7F9CE00F8CEF0 /* white concrete building under blue sky during daytime.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "white concrete building under blue sky during daytime.jpeg"; sourceTree = "<group>"; };
-		056B835E26AF01BE0082937E /* MainScreenWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenWireframe.swift; sourceTree = "<group>"; };
-		056B836026AF065F0082937E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		0584AEE226B2D88A0068E184 /* DetailViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewViewController.swift; sourceTree = "<group>"; };
-		0584AEE426B2D8AA0068E184 /* DetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPresenter.swift; sourceTree = "<group>"; };
-		0584AEE626B2D8C90068E184 /* DetailViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewInteractor.swift; sourceTree = "<group>"; };
-		0584AEE826B2D8DF0068E184 /* DetailViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewRouter.swift; sourceTree = "<group>"; };
-		0584AEEA26B2D8FC0068E184 /* DetailViewWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewWireFrame.swift; sourceTree = "<group>"; };
+		053D1D0D26B93EC300ACCC22 /* MainScreenEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenEnum.swift; sourceTree = "<group>"; };
+		0550946226BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPlaceHolderPictureObject.swift; sourceTree = "<group>"; };
+		0550946426BA6816008F02A4 /* UnsplashPictureObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPictureObject.swift; sourceTree = "<group>"; };
 		056B835E26AF01BE0082937E /* MainScreenWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenWireframe.swift; sourceTree = "<group>"; };
 		056B836026AF065F0082937E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0584AEE226B2D88A0068E184 /* DetailViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewViewController.swift; sourceTree = "<group>"; };
@@ -78,8 +68,6 @@
 		059B521726AAC2420004997C /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
 		059B521926AAC2710004997C /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
 		059B521B26AAC2920004997C /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
-		059B521F26AAD5700004997C /* V1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V1.swift; sourceTree = "<group>"; };
-		059B522126AAD6020004997C /* V2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2.swift; sourceTree = "<group>"; };
 		05BBF45E26A9536B005CBB89 /* VIPER_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPER_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BBF46126A9536B005CBB89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05BBF46326A9536B005CBB89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0550946126BA65E7008F02A4 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				0550946226BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift */,
+				0550946426BA6816008F02A4 /* UnsplashPictureObject.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		0584AEE126B2D8470068E184 /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +149,7 @@
 		059B521426AAC1140004997C /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				053D1D0D26B93EC300ACCC22 /* MainScreenEnum.swift */,
 				05BBF46526A9536B005CBB89 /* MainScreenViewController.swift */,
 				059B521726AAC2420004997C /* MainScreenPresenter.swift */,
 				059B521926AAC2710004997C /* MainScreenInteractor.swift */,
@@ -159,15 +157,6 @@
 				056B835E26AF01BE0082937E /* MainScreenWireframe.swift */,
 			);
 			name = MainScreen;
-			sourceTree = "<group>";
-		};
-		059B521D26AAC2DA0004997C /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				059B521F26AAD5700004997C /* V1.swift */,
-				059B522126AAD6020004997C /* V2.swift */,
-			);
-			name = Entities;
 			sourceTree = "<group>";
 		};
 		059B521E26AAC3020004997C /* Common */ = {
@@ -210,8 +199,8 @@
 		05BBF46026A9536B005CBB89 /* VIPER_Project */ = {
 			isa = PBXGroup;
 			children = (
+				0550946126BA65E7008F02A4 /* Entities */,
 				059B522326AB0D0B0004997C /* Services */,
-				059B521D26AAC2DA0004997C /* Entities */,
 				059B521E26AAC3020004997C /* Common */,
 				059B521326AAC0F30004997C /* Modules */,
 				059B521226AABFD20004997C /* StoryBoard */,
@@ -401,18 +390,19 @@
 				059B521C26AAC2920004997C /* MainScreenRouter.swift in Sources */,
 				0584AEEB26B2D8FC0068E184 /* DetailViewWireFrame.swift in Sources */,
 				05BBF46626A9536B005CBB89 /* MainScreenViewController.swift in Sources */,
+				053D1D0E26B93EC300ACCC22 /* MainScreenEnum.swift in Sources */,
 				05BBF46226A9536B005CBB89 /* AppDelegate.swift in Sources */,
 				056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */,
 				056B836126AF065F0082937E /* NetworkManager.swift in Sources */,
 				05BBF46426A9536B005CBB89 /* SceneDelegate.swift in Sources */,
 				0584AEE726B2D8C90068E184 /* DetailViewInteractor.swift in Sources */,
-				059B522026AAD5700004997C /* V1.swift in Sources */,
 				0584AEE926B2D8DF0068E184 /* DetailViewRouter.swift in Sources */,
-				059B522226AAD6020004997C /* V2.swift in Sources */,
+				0550946326BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift in Sources */,
 				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
 				0584AEE326B2D88A0068E184 /* DetailViewViewController.swift in Sources */,
 				059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */,
 				059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */,
+				0550946526BA6816008F02A4 /* UnsplashPictureObject.swift in Sources */,
 				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
 				0584AEE326B2D88A0068E184 /* DetailViewViewController.swift in Sources */,
 			);

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol MainScreenRouterProtocol: AnyObject {
+
     func presentDetailView(from view: UIViewController)
 }
 

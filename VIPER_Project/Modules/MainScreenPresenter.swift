@@ -8,61 +8,64 @@
 import Foundation
 import UIKit
 
- protocol MainScreenPresenterProtocol: AnyObject {
-
-    func didSelectRowAt(from view: UIViewController, index: Int)
-    func viewDidLoad(tableView: inout UITableView, viewController: UIViewController)
-    func numberOfRowInSection() -> Int
-    func textLabel(indexPath: IndexPath) -> String?
-    func didSelectRowAt(from view: UIViewController)
+protocol MainScreenPresenterProtocol: AnyObject {
+    func viewDidLoad(tableView: UITableView)
+func didSelectRowAt(from view: UIViewController, index: Int)
 }
 
-final class MainScreenPresenter {
+final class MainScreenPresenter: NSObject {
     private var pictures: [String]?
 
-    var interactor: MainScreenInteractorProtocol?
-    var router: MainScreenRouterProtocol?
-    // weak var view: MainScreenViewController?
+    private var interactor: MainScreenInteractorProtocol
+    private var router: MainScreenRouterProtocol
+
+    init(interactor: MainScreenInteractorProtocol, router: MainScreenRouterProtocol) {
+        self.interactor = interactor
+        self.router = router
+    }
 }
 
 // MARK: - MainScreenPresenterProtocol
 extension MainScreenPresenter: MainScreenPresenterProtocol {
+    func viewDidLoad( tableView: UITableView) {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: MainScreenEnum.cell.rawValue)
 
-    func viewDidLoad( tableView: inout UITableView, viewController: UIViewController) {
-        tableView = UITableView(frame: viewController.view.bounds, style: UITableView.Style.plain)
-        tableView.delegate = viewController as? UITableViewDelegate
-        tableView.dataSource = viewController as? UITableViewDataSource
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        viewController.view.addSubview(tableView)
-
-        let handler: ([PictureObject]) -> Void = { [weak self] in
+        let handler: ([JSONPlaceHolderPictureObject]) -> Void = { [weak self] in
             self?.pictures = $0.compactMap {$0.title}
             tableView.reloadData()
         }
-        interactor?.loadPicturesList(completion: handler)
+        interactor.loadPicturesList(completion: handler)
     }
+}
 
-    func numberOfRowInSection() -> Int {
+// MARK: - UITableViewDataSource, UITableViewDelegate
+extension MainScreenPresenter: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let pictures = self.pictures else { return 0 }
         return pictures.count
     }
 
-    func textLabel(indexPath: IndexPath) -> String? {
-        guard let pictures = self.pictures else { return nil }
-        return pictures[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let pictures = self.pictures else { fatalError() }
+        let cell = tableView.dequeueReusableCell(withIdentifier: MainScreenEnum.cell.rawValue, for: indexPath)
+        cell.textLabel?.text = pictures[indexPath.row]
+        cell.textLabel?.numberOfLines = 0
+        return cell
     }
 
     func didSelectRowAt(from view: UIViewController, index: Int) {
         let handler: (UIImage) -> Void = {image in
             print("from didselect \(image)")
-            self.router?.presentDetailView(from: view)
+            self.router.presentDetailView(from: view)
         }
-        interactor?.loadImage(index: index, completion: handler)
+        interactor.loadImage(index: index, completion: handler)
        // router?.presentDetailView(from: view)
     }
 
     func didSelectRowAt(from view: UIViewController) {
-        router?.presentDetailView(from: view)
+        router.presentDetailView(from: view)
     }
 
 }

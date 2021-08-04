@@ -1,15 +1,15 @@
 //
-//  Entity.swift
+//  JSONPlaceHolderPictureObject.swift
 //  VIPER_Project
 //
-//  Created by Denis Golovizin on 23.07.2021.
+//  Created by Denis Golovizin on 04.08.2021.
 //
 
 import Foundation
 
 // https://jsonplaceholder.typicode.com/photos
 
-struct PictureObject: Codable {
+struct JSONPlaceHolderPictureObject: Codable {
     let id: Int
     let title: String
     let url: String

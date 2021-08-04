@@ -19,16 +19,12 @@ final class MainScreenWireFrame {
 // MARK: - MainScreenWireFrameProtocol
 extension MainScreenWireFrame: MainScreenWireFrameProtocol {
     func buildModule() -> UIViewController {
-
-        let mainScreenViewController = MainScreenViewController()
-        let presenter = MainScreenPresenter()
         let interactor = MainScreenInteractor()
         let router = MainScreenRouter()
+        let presenter = MainScreenPresenter(interactor: interactor, router: router)
 
+        let mainScreenViewController = MainScreenViewController()
         mainScreenViewController.presenter = presenter
-       // presenter.view = mainScreenViewController
-        presenter.interactor = interactor
-        presenter.router = router
 
         return mainScreenViewController
     }
