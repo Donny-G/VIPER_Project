@@ -22,8 +22,4 @@ final class MainScreenViewController: UIViewController {
         super.viewDidLoad()
         presenter?.viewDidLoad(tableView: tableView)
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.didSelectRowAt(from: self, index: indexPath.row)
-    }
 }

@@ -9,28 +9,26 @@ import Foundation
 import UIKit
 
 protocol DetailViewPresenterProtocol {
-    func viewDidLoad(imageView: inout UIImageView, viewController: UIViewController)
+    func viewDidLoad(imageView: UIImageView)
 }
 
 final class DetailViewPresenter {
+    private var interactor: DetailViewInteractorProtocol
+    private var router: DetailViewRouterProtocol
 
+    private var image: UIImage?
+
+    init(interactor: DetailViewInteractorProtocol, router: DetailViewRouterProtocol, image: UIImage) {
+        self.interactor = interactor
+        self.router = router
+        self.image = image
+    }
 }
 
 // MARK: - DetailViewPresenterProtocol
 
 extension DetailViewPresenter: DetailViewPresenterProtocol {
-    func viewDidLoad(imageView: inout UIImageView, viewController: UIViewController) {
-        imageView.image = UIImage(systemName: "pencil")
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        viewController.view.addSubview(imageView)
-
-        NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalTo: viewController.view.widthAnchor, multiplier: 0.7),
-            imageView.heightAnchor.constraint(equalTo: viewController.view.heightAnchor, multiplier: 0.8),
-            imageView.centerXAnchor.constraint(equalTo: viewController.view.centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: viewController.view.centerYAnchor)
-        ])
-
-        imageView.isUserInteractionEnabled = true
+    func viewDidLoad(imageView: UIImageView) {
+        imageView.image = image
     }
 }

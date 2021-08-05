@@ -12,39 +12,47 @@ protocol GestureRecognizingProtocol {
     func panGestureRecognizerInit()
 }
 
-final class DetailViewViewController: UIViewController {
+final class DetailViewController: UIViewController {
 
     private var imageView = UIImageView()
-    private  var initialCenter = CGPoint()
+    private var initialCenter = CGPoint()
+
     var presenter: DetailViewPresenterProtocol?
+
+    override func loadView() {
+        super.loadView()
+        self.view = imageView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       // initialImageConfig()
-        presenter?.viewDidLoad(imageView: &imageView, viewController: self)
+        // initialImageConfig()
+        imageView.isUserInteractionEnabled = true
+        presenter?.viewDidLoad(imageView: imageView)
 
         pinchGestureRecognizerInit()
         panGestureRecognizerInit()
     }
 
-    func initialImageConfig() {
-        imageView.image = UIImage(systemName: "pencil")
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(imageView)
-
-        NSLayoutConstraint.activate([ imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
-            imageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8),
-            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-
-        imageView.isUserInteractionEnabled = true
-    }
+    /* in case of using subview
+     func initialImageConfig() {
+     // imageView.image = UIImage(systemName: "pencil")
+     imageView.translatesAutoresizingMaskIntoConstraints = false
+     self.view.addSubview(imageView)
+     NSLayoutConstraint.activate([
+     imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
+     imageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8),
+     imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+     imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+     ])
+     // imageView.isUserInteractionEnabled = true
+     }
+     */
 }
 
 // MARK: - GestureRecognizingProtocol
 
-extension DetailViewViewController: GestureRecognizingProtocol {
+extension DetailViewController: GestureRecognizingProtocol {
     func pinchGestureRecognizerInit() {
         let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(didScaleImageView(_:)))
         imageView.addGestureRecognizer(pinchGestureRecognizer)

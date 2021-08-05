@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+protocol DetailViewInteractorProtocol {
+
+}
+
+final class DetailViewInteractor {
+
+}
+
+extension DetailViewInteractor: DetailViewInteractorProtocol {
+
+}

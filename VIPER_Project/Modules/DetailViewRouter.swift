@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol DetailViewRouterProtocol {
-    func buildDetailViewModule() -> UIViewController
+
 }
 
 final class DetailViewRouter {
@@ -18,9 +18,5 @@ final class DetailViewRouter {
 
 // MARK: - DetailViewRouterProtocol
 extension DetailViewRouter: DetailViewRouterProtocol {
-    func buildDetailViewModule() -> UIViewController {
-        let detailViewController = DetailViewViewController()
-        return detailViewController
-    }
 
 }

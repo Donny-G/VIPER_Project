@@ -10,7 +10,6 @@ import UIKit
 
 protocol MainScreenPresenterProtocol: AnyObject {
     func viewDidLoad(tableView: UITableView)
-func didSelectRowAt(from view: UIViewController, index: Int)
 }
 
 final class MainScreenPresenter: NSObject {
@@ -27,13 +26,13 @@ final class MainScreenPresenter: NSObject {
 
 // MARK: - MainScreenPresenterProtocol
 extension MainScreenPresenter: MainScreenPresenterProtocol {
-    func viewDidLoad( tableView: UITableView) {
+    func viewDidLoad(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: MainScreenEnum.cell.rawValue)
 
         let handler: ([JSONPlaceHolderPictureObject]) -> Void = { [weak self] in
-            self?.pictures = $0.compactMap {$0.title}
+            self?.pictures = $0.compactMap { $0.title }
             tableView.reloadData()
         }
         interactor.loadPicturesList(completion: handler)
@@ -55,17 +54,12 @@ extension MainScreenPresenter: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    func didSelectRowAt(from view: UIViewController, index: Int) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let handler: (UIImage) -> Void = {image in
             print("from didselect \(image)")
-            self.router.presentDetailView(from: view)
+            self.router.presentDetailView(image: image)
         }
-        interactor.loadImage(index: index, completion: handler)
-       // router?.presentDetailView(from: view)
-    }
+        interactor.loadImage(index: indexPath.row, completion: handler)
 
-    func didSelectRowAt(from view: UIViewController) {
-        router.presentDetailView(from: view)
     }
-
 }
