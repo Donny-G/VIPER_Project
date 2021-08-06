@@ -44,7 +44,6 @@ extension MainScreenInteractor: MainScreenInteractorProtocol {
         guard let items = try? fileManager.contentsOfDirectory(atPath: path) else { fatalError() }
         for item in items {
             if item.hasPrefix(imageName) {
-                print(item)
                 guard let returnImage = UIImage(named: item) else { fatalError()}
                 completion(returnImage)
             }

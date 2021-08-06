@@ -56,10 +56,8 @@ extension MainScreenPresenter: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let handler: (UIImage) -> Void = {image in
-            print("from didselect \(image)")
             self.router.presentDetailView(image: image)
         }
         interactor.loadImage(index: indexPath.row, completion: handler)
-
     }
 }

@@ -9,27 +9,21 @@ import Foundation
 import UIKit
 
 protocol MainScreenRouterProtocol: AnyObject {
-
     func presentDetailView(image: UIImage)
 }
 
 final class MainScreenRouter {
 
-    // MARK: - not so clean solution
-
-    private var mainScreenViewController: MainScreenViewController
-    init (mainScreenViewController: MainScreenViewController) {
-        self.mainScreenViewController = mainScreenViewController
-    }
 }
 
 // MARK: - MainScreenRouterProtocol
 extension MainScreenRouter: MainScreenRouterProtocol {
     func presentDetailView(image: UIImage) {
-        let detailViewController =  DetailViewWireFrame().buildDetailViewModule(image: image)
-
-        // MARK: - not so clean solution
-
-        self.mainScreenViewController.navigationController?.pushViewController(detailViewController, animated: true)
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let sceneDelegate = windowScene.delegate as? SceneDelegate
+        else {
+            return
+        }
+        sceneDelegate.coordinator.showDetailView(with: image)
     }
 }

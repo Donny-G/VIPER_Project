@@ -12,6 +12,8 @@
 		052FE1DB26B7F9CE00F8CEF0 /* aerial view of green trees during daytime.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 052FE1D726B7F9CE00F8CEF0 /* aerial view of green trees during daytime.jpeg */; };
 		052FE1DC26B7F9CE00F8CEF0 /* white concrete building under blue sky during daytime.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 052FE1D826B7F9CE00F8CEF0 /* white concrete building under blue sky during daytime.jpeg */; };
 		053D1D0E26B93EC300ACCC22 /* MainScreenEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D1D0D26B93EC300ACCC22 /* MainScreenEnum.swift */; };
+		0550000126BC1FDB00750297 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550000026BC1FDB00750297 /* CoordinatorProtocol.swift */; };
+		0550000326BC206600750297 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550000226BC206600750297 /* MainCoordinator.swift */; };
 		0550946326BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550946226BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift */; };
 		0550946526BA6816008F02A4 /* UnsplashPictureObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550946426BA6816008F02A4 /* UnsplashPictureObject.swift */; };
 		056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B835E26AF01BE0082937E /* MainScreenWireframe.swift */; };
@@ -56,6 +58,8 @@
 		052FE1D726B7F9CE00F8CEF0 /* aerial view of green trees during daytime.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "aerial view of green trees during daytime.jpeg"; sourceTree = "<group>"; };
 		052FE1D826B7F9CE00F8CEF0 /* white concrete building under blue sky during daytime.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "white concrete building under blue sky during daytime.jpeg"; sourceTree = "<group>"; };
 		053D1D0D26B93EC300ACCC22 /* MainScreenEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenEnum.swift; sourceTree = "<group>"; };
+		0550000026BC1FDB00750297 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		0550000226BC206600750297 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		0550946226BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPlaceHolderPictureObject.swift; sourceTree = "<group>"; };
 		0550946426BA6816008F02A4 /* UnsplashPictureObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPictureObject.swift; sourceTree = "<group>"; };
 		056B835E26AF01BE0082937E /* MainScreenWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenWireframe.swift; sourceTree = "<group>"; };
@@ -115,6 +119,15 @@
 				0550946426BA6816008F02A4 /* UnsplashPictureObject.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		0550FFFF26BC1F7900750297 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				0550000026BC1FDB00750297 /* CoordinatorProtocol.swift */,
+				0550000226BC206600750297 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		0584AEE126B2D8470068E184 /* DetailView */ = {
@@ -199,6 +212,7 @@
 		05BBF46026A9536B005CBB89 /* VIPER_Project */ = {
 			isa = PBXGroup;
 			children = (
+				0550FFFF26BC1F7900750297 /* Coordinators */,
 				0550946126BA65E7008F02A4 /* Entities */,
 				059B522326AB0D0B0004997C /* Services */,
 				059B521E26AAC3020004997C /* Common */,
@@ -400,6 +414,8 @@
 				0550946326BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift in Sources */,
 				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
 				0584AEE326B2D88A0068E184 /* DetailViewViewController.swift in Sources */,
+				0550000326BC206600750297 /* MainCoordinator.swift in Sources */,
+				0550000126BC1FDB00750297 /* CoordinatorProtocol.swift in Sources */,
 				059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */,
 				059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */,
 				0550946526BA6816008F02A4 /* UnsplashPictureObject.swift in Sources */,

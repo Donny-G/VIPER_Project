@@ -26,28 +26,13 @@ final class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // initialImageConfig()
-        imageView.isUserInteractionEnabled = true
+
         presenter?.viewDidLoad(imageView: imageView)
 
+        imageView.isUserInteractionEnabled = true
         pinchGestureRecognizerInit()
         panGestureRecognizerInit()
     }
-
-    /* in case of using subview
-     func initialImageConfig() {
-     // imageView.image = UIImage(systemName: "pencil")
-     imageView.translatesAutoresizingMaskIntoConstraints = false
-     self.view.addSubview(imageView)
-     NSLayoutConstraint.activate([
-     imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
-     imageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8),
-     imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-     imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-     ])
-     // imageView.isUserInteractionEnabled = true
-     }
-     */
 }
 
 // MARK: - GestureRecognizingProtocol

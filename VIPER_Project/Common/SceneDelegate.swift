@@ -10,6 +10,9 @@ import UIKit
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    let navigationController = UINavigationController()
+
+    lazy var coordinator: MainCoordinator = self.createCoordinator()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
@@ -18,17 +21,16 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new
         // (see `application:configurationForConnectingSceneSession` instead).
-        guard (scene as? UIWindowScene) != nil else { return }
+        // guard (scene as? UIWindowScene) != nil else { return }
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
-        window?.backgroundColor = .white
-        window?.makeKeyAndVisible()
 
-        let navigationViewController = UINavigationController()
-        window?.rootViewController = navigationViewController
-        navigationViewController.pushViewController(MainScreenWireFrame().buildModule(), animated: false)
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = navigationController
+        self.window = window
+        window.makeKeyAndVisible()
+
+        coordinator.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -59,5 +61,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+}
 
+// MARK: - createCoordinator method
+extension SceneDelegate {
+    func createCoordinator() -> MainCoordinator {
+        return MainCoordinator(navigationController: navigationController)
+    }
 }
