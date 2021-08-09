@@ -32,7 +32,6 @@ final class MainScreenInteractor {
 
 // MARK: - MainScreenInteractorProtocol
 extension MainScreenInteractor: MainScreenInteractorProtocol {
-
     func loadPicturesList(completion: ([JSONPlaceHolderPictureObject]) -> Void) {
         completion(mocPictureList)
     }
