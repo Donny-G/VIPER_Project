@@ -18,9 +18,7 @@ final class DetailViewWireFrame {
 
 extension DetailViewWireFrame: DetailViewWireFrameProtocol {
     func buildDetailViewModule(image: UIImage) -> UIViewController {
-        let interactor = DetailViewInteractor()
-        let router = DetailViewRouter()
-        let presenter = DetailViewPresenter(interactor: interactor, router: router, image: image)
+        let presenter = DetailViewPresenter(image: image)
 
         let detailViewController = DetailViewController()
         detailViewController.presenter = presenter

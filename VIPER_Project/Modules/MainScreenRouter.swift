@@ -13,17 +13,16 @@ protocol MainScreenRouterProtocol: AnyObject {
 }
 
 final class MainScreenRouter {
+    var showImage: ((UIImage) -> Void)
 
+    init(showImage: @escaping ((UIImage) -> Void)) {
+        self.showImage = showImage
+    }
 }
 
 // MARK: - MainScreenRouterProtocol
 extension MainScreenRouter: MainScreenRouterProtocol {
     func presentDetailView(image: UIImage) {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let sceneDelegate = windowScene.delegate as? SceneDelegate
-        else {
-            return
-        }
-        sceneDelegate.coordinator.showDetailView(with: image)
+        showImage(image)
     }
 }

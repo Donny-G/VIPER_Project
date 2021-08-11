@@ -38,14 +38,8 @@ extension MainScreenInteractor: MainScreenInteractorProtocol {
 
     func loadImage(index: Int, completion: (UIImage) -> Void) {
         let imageName = mocPictureList[index].url
-        let fileManager = FileManager.default
-        guard  let path = Bundle.main.resourcePath else { fatalError() }
-        guard let items = try? fileManager.contentsOfDirectory(atPath: path) else { fatalError() }
-        for item in items {
-            if item.hasPrefix(imageName) {
-                guard let returnImage = UIImage(named: item) else { fatalError()}
-                completion(returnImage)
-            }
+        if let imageToShow = UIImage(named: imageName) {
+            completion(imageToShow)
         }
     }
 }

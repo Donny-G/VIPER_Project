@@ -19,13 +19,20 @@ final class MainCoordinator {
 // MARK: - CoordinatorProtocol
 extension MainCoordinator: CoordinatorProtocol {
     func start() {
-        let mainScreenViewController = MainScreenWireFrame().buildModule()
+        let showImage: (UIImage) -> Void = {
+            [weak self] in
+            self?.showDetailView(with: $0)
+        }
+
+        let dependency = MainScreenWireFrame.Dependency(showImage: showImage)
+
+        let mainScreenViewController = MainScreenWireFrame(dependency: dependency).buildModule()
         navigationController.pushViewController(mainScreenViewController, animated: true)
     }
 }
 
 // MARK: - showDetailView method
-extension MainCoordinator {
+private extension MainCoordinator {
     func showDetailView(with image: UIImage) {
         let detailViewController = DetailViewWireFrame().buildDetailViewModule(image: image)
         navigationController.pushViewController(detailViewController, animated: true)

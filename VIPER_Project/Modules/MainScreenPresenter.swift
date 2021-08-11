@@ -42,14 +42,17 @@ extension MainScreenPresenter: MainScreenPresenterProtocol {
 // MARK: - UITableViewDataSource, UITableViewDelegate
 extension MainScreenPresenter: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let pictures = self.pictures else { return 0 }
-        return pictures.count
+        if let pictures = self.pictures {
+            return pictures.count
+        }
+        return 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let pictures = self.pictures else { fatalError() }
         let cell = tableView.dequeueReusableCell(withIdentifier: MainScreenEnum.cell.rawValue, for: indexPath)
-        cell.textLabel?.text = pictures[indexPath.row]
+        if let pictures = self.pictures {
+            cell.textLabel?.text = pictures[indexPath.row]
+        }
         cell.textLabel?.numberOfLines = 0
         return cell
     }

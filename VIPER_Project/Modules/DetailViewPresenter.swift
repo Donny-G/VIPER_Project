@@ -13,14 +13,9 @@ protocol DetailViewPresenterProtocol {
 }
 
 final class DetailViewPresenter {
-    private var interactor: DetailViewInteractorProtocol
-    private var router: DetailViewRouterProtocol
-
     private var image: UIImage?
 
-    init(interactor: DetailViewInteractorProtocol, router: DetailViewRouterProtocol, image: UIImage) {
-        self.interactor = interactor
-        self.router = router
+    init(image: UIImage) {
         self.image = image
     }
 }

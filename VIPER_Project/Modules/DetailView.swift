@@ -1,8 +1,8 @@
 //
-//  DetailViewViewController.swift
+//  DetailView.swift
 //  VIPER_Project
 //
-//  Created by Denis Golovizin on 29.07.2021.
+//  Created by Denis Golovizin on 10.08.2021.
 //
 
 import UIKit
@@ -12,35 +12,29 @@ protocol GestureRecognizingProtocol {
     func panGestureRecognizerInit()
 }
 
-final class DetailViewController: UIViewController {
+final class DetailView: UIImageView {
 
-    private var imageView = UIImageView()
     private var initialCenter = CGPoint()
 
-    var presenter: DetailViewPresenterProtocol?
+    override init(frame: CGRect) {
+        super.init(frame: frame)
 
-    override func loadView() {
-        super.loadView()
-        self.view = imageView
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        presenter?.viewDidLoad(imageView: imageView)
-
-        imageView.isUserInteractionEnabled = true
+        isUserInteractionEnabled = true
         pinchGestureRecognizerInit()
         panGestureRecognizerInit()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
 // MARK: - GestureRecognizingProtocol
 
-extension DetailViewController: GestureRecognizingProtocol {
+extension DetailView: GestureRecognizingProtocol {
     func pinchGestureRecognizerInit() {
         let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(didScaleImageView(_:)))
-        imageView.addGestureRecognizer(pinchGestureRecognizer)
+      self.addGestureRecognizer(pinchGestureRecognizer)
     }
 
     @objc private func didScaleImageView(_ sender: UIPinchGestureRecognizer) {
@@ -53,7 +47,7 @@ extension DetailViewController: GestureRecognizingProtocol {
 
     func panGestureRecognizerInit() {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanImageView(_:)))
-        imageView.addGestureRecognizer(panGestureRecognizer)
+      self.addGestureRecognizer(panGestureRecognizer)
     }
 
     @objc private func didPanImageView(_ sender: UIPanGestureRecognizer) {
