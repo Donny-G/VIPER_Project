@@ -13,14 +13,22 @@ protocol MainScreenWireFrameProtocol: AnyObject {
 }
 
 final class MainScreenWireFrame {
+    struct Dependency {
+        var showImage: ((UIImage) -> Void)
+    }
 
+    let dependency: Dependency
+
+    init(dependency: Dependency) {
+        self.dependency = dependency
+    }
 }
 
 // MARK: - MainScreenWireFrameProtocol
 extension MainScreenWireFrame: MainScreenWireFrameProtocol {
     func buildModule() -> UIViewController {
         let interactor = MainScreenInteractor()
-        let router = MainScreenRouter()
+        let router = MainScreenRouter(showImage: self.dependency.showImage)
         let presenter = MainScreenPresenter(interactor: interactor, router: router)
 
         let mainScreenViewController = MainScreenViewController()
