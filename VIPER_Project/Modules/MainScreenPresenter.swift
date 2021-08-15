@@ -10,6 +10,7 @@ import UIKit
 
 protocol MainScreenPresenterProtocol: AnyObject {
     func viewDidLoad(tableView: UITableView)
+    func openImageDownloader()
 }
 
 final class MainScreenPresenter: NSObject {
@@ -36,6 +37,10 @@ extension MainScreenPresenter: MainScreenPresenterProtocol {
             tableView.reloadData()
         }
         interactor.loadPicturesList(completion: handler)
+    }
+
+    func openImageDownloader() {
+        router.presentImageDownloaderView()
     }
 }
 

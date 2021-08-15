@@ -10,13 +10,17 @@ import UIKit
 
 protocol MainScreenRouterProtocol: AnyObject {
     func presentDetailView(image: UIImage)
+    func presentImageDownloaderView()
 }
 
 final class MainScreenRouter {
     var showImage: ((UIImage) -> Void)
 
-    init(showImage: @escaping ((UIImage) -> Void)) {
+    var showImageDownloaderView: (() -> Void)
+
+    init(showImage: @escaping ((UIImage) -> Void), showImageDownloaderView: @escaping (() -> Void)) {
         self.showImage = showImage
+        self.showImageDownloaderView = showImageDownloaderView
     }
 }
 
@@ -24,5 +28,9 @@ final class MainScreenRouter {
 extension MainScreenRouter: MainScreenRouterProtocol {
     func presentDetailView(image: UIImage) {
         showImage(image)
+    }
+
+    func presentImageDownloaderView() {
+        showImageDownloaderView()
     }
 }

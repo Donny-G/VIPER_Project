@@ -21,5 +21,14 @@ final class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad(tableView: tableView)
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "network"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(urlView))
+    }
+
+    @objc func urlView() {
+        presenter?.openImageDownloader()
     }
 }

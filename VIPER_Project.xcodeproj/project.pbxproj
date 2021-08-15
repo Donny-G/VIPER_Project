@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053289BC26C65F3E0004DBDD /* NetworkImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053289BB26C65F3E0004DBDD /* NetworkImageLoader.swift */; };
 		053D1D0E26B93EC300ACCC22 /* MainScreenEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D1D0D26B93EC300ACCC22 /* MainScreenEnum.swift */; };
 		054CF9DC26C278160020AA1F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054CF9DB26C278160020AA1F /* DetailView.swift */; };
 		0550000126BC1FDB00750297 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550000026BC1FDB00750297 /* CoordinatorProtocol.swift */; };
@@ -15,12 +16,20 @@
 		0550946526BA6816008F02A4 /* UnsplashPictureObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550946426BA6816008F02A4 /* UnsplashPictureObject.swift */; };
 		056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B835E26AF01BE0082937E /* MainScreenWireframe.swift */; };
 		056B836126AF065F0082937E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B836026AF065F0082937E /* NetworkManager.swift */; };
+		0583DBD026C859C500BA8BE5 /* InterfaceIconsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583DBCF26C859C500BA8BE5 /* InterfaceIconsEnum.swift */; };
+		0583DBD226C85A6700BA8BE5 /* ImageDownloaderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583DBD126C85A6700BA8BE5 /* ImageDownloaderEnum.swift */; };
 		0584AEE326B2D88A0068E184 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE226B2D88A0068E184 /* DetailViewController.swift */; };
 		0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE426B2D8AA0068E184 /* DetailViewPresenter.swift */; };
 		0584AEEB26B2D8FC0068E184 /* DetailViewWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEEA26B2D8FC0068E184 /* DetailViewWireFrame.swift */; };
 		059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521726AAC2420004997C /* MainScreenPresenter.swift */; };
 		059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521926AAC2710004997C /* MainScreenInteractor.swift */; };
 		059B521C26AAC2920004997C /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521B26AAC2920004997C /* MainScreenRouter.swift */; };
+		05A1F8EE26C504BF00F95EB3 /* ImageDownloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1F8ED26C504BF00F95EB3 /* ImageDownloaderViewController.swift */; };
+		05A1F8F026C504F600F95EB3 /* ImageDownloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1F8EF26C504F600F95EB3 /* ImageDownloaderView.swift */; };
+		05A1F8F226C5050F00F95EB3 /* ImageDownloaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1F8F126C5050F00F95EB3 /* ImageDownloaderPresenter.swift */; };
+		05A1F8F426C5052A00F95EB3 /* ImageDownloaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1F8F326C5052A00F95EB3 /* ImageDownloaderInteractor.swift */; };
+		05A1F8F626C5053C00F95EB3 /* ImageDownloaderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1F8F526C5053C00F95EB3 /* ImageDownloaderRouter.swift */; };
+		05A1F8F826C5055300F95EB3 /* ImageDownloaderWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1F8F726C5055300F95EB3 /* ImageDownloaderWireframe.swift */; };
 		05BBF46226A9536B005CBB89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF46126A9536B005CBB89 /* AppDelegate.swift */; };
 		05BBF46426A9536B005CBB89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF46326A9536B005CBB89 /* SceneDelegate.swift */; };
 		05BBF46626A9536B005CBB89 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF46526A9536B005CBB89 /* MainScreenViewController.swift */; };
@@ -48,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		053289BB26C65F3E0004DBDD /* NetworkImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageLoader.swift; sourceTree = "<group>"; };
 		053D1D0D26B93EC300ACCC22 /* MainScreenEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenEnum.swift; sourceTree = "<group>"; };
 		054CF9DB26C278160020AA1F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		0550000026BC1FDB00750297 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
@@ -56,12 +66,20 @@
 		0550946426BA6816008F02A4 /* UnsplashPictureObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPictureObject.swift; sourceTree = "<group>"; };
 		056B835E26AF01BE0082937E /* MainScreenWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenWireframe.swift; sourceTree = "<group>"; };
 		056B836026AF065F0082937E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0583DBCF26C859C500BA8BE5 /* InterfaceIconsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceIconsEnum.swift; sourceTree = "<group>"; };
+		0583DBD126C85A6700BA8BE5 /* ImageDownloaderEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderEnum.swift; sourceTree = "<group>"; };
 		0584AEE226B2D88A0068E184 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0584AEE426B2D8AA0068E184 /* DetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPresenter.swift; sourceTree = "<group>"; };
 		0584AEEA26B2D8FC0068E184 /* DetailViewWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewWireFrame.swift; sourceTree = "<group>"; };
 		059B521726AAC2420004997C /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
 		059B521926AAC2710004997C /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
 		059B521B26AAC2920004997C /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
+		05A1F8ED26C504BF00F95EB3 /* ImageDownloaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderViewController.swift; sourceTree = "<group>"; };
+		05A1F8EF26C504F600F95EB3 /* ImageDownloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderView.swift; sourceTree = "<group>"; };
+		05A1F8F126C5050F00F95EB3 /* ImageDownloaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderPresenter.swift; sourceTree = "<group>"; };
+		05A1F8F326C5052A00F95EB3 /* ImageDownloaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderInteractor.swift; sourceTree = "<group>"; };
+		05A1F8F526C5053C00F95EB3 /* ImageDownloaderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderRouter.swift; sourceTree = "<group>"; };
+		05A1F8F726C5055300F95EB3 /* ImageDownloaderWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderWireframe.swift; sourceTree = "<group>"; };
 		05BBF45E26A9536B005CBB89 /* VIPER_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPER_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BBF46126A9536B005CBB89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05BBF46326A9536B005CBB89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +138,16 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		0583DBCE26C8597B00BA8BE5 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				0583DBCF26C859C500BA8BE5 /* InterfaceIconsEnum.swift */,
+				0583DBD126C85A6700BA8BE5 /* ImageDownloaderEnum.swift */,
+				053D1D0D26B93EC300ACCC22 /* MainScreenEnum.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		0584AEE126B2D8470068E184 /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +170,7 @@
 		059B521326AAC0F30004997C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				05A1F8EC26C503DE00F95EB3 /* ImageDownloader */,
 				0584AEE126B2D8470068E184 /* DetailView */,
 				059B521426AAC1140004997C /* MainScreen */,
 			);
@@ -151,7 +180,6 @@
 		059B521426AAC1140004997C /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				053D1D0D26B93EC300ACCC22 /* MainScreenEnum.swift */,
 				05BBF46526A9536B005CBB89 /* MainScreenViewController.swift */,
 				059B521726AAC2420004997C /* MainScreenPresenter.swift */,
 				059B521926AAC2710004997C /* MainScreenInteractor.swift */,
@@ -174,8 +202,22 @@
 			isa = PBXGroup;
 			children = (
 				056B836026AF065F0082937E /* NetworkManager.swift */,
+				053289BB26C65F3E0004DBDD /* NetworkImageLoader.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		05A1F8EC26C503DE00F95EB3 /* ImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				05A1F8ED26C504BF00F95EB3 /* ImageDownloaderViewController.swift */,
+				05A1F8EF26C504F600F95EB3 /* ImageDownloaderView.swift */,
+				05A1F8F126C5050F00F95EB3 /* ImageDownloaderPresenter.swift */,
+				05A1F8F326C5052A00F95EB3 /* ImageDownloaderInteractor.swift */,
+				05A1F8F526C5053C00F95EB3 /* ImageDownloaderRouter.swift */,
+				05A1F8F726C5055300F95EB3 /* ImageDownloaderWireframe.swift */,
+			);
+			name = ImageDownloader;
 			sourceTree = "<group>";
 		};
 		05BBF45526A9536B005CBB89 = {
@@ -201,6 +243,7 @@
 		05BBF46026A9536B005CBB89 /* VIPER_Project */ = {
 			isa = PBXGroup;
 			children = (
+				0583DBCE26C8597B00BA8BE5 /* Enums */,
 				0550FFFF26BC1F7900750297 /* Coordinators */,
 				0550946126BA65E7008F02A4 /* Entities */,
 				059B522326AB0D0B0004997C /* Services */,
@@ -384,22 +427,31 @@
 			files = (
 				059B521C26AAC2920004997C /* MainScreenRouter.swift in Sources */,
 				0584AEEB26B2D8FC0068E184 /* DetailViewWireFrame.swift in Sources */,
+				05A1F8F826C5055300F95EB3 /* ImageDownloaderWireframe.swift in Sources */,
 				05BBF46626A9536B005CBB89 /* MainScreenViewController.swift in Sources */,
+				05A1F8F026C504F600F95EB3 /* ImageDownloaderView.swift in Sources */,
 				053D1D0E26B93EC300ACCC22 /* MainScreenEnum.swift in Sources */,
 				05BBF46226A9536B005CBB89 /* AppDelegate.swift in Sources */,
 				056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */,
 				056B836126AF065F0082937E /* NetworkManager.swift in Sources */,
 				05BBF46426A9536B005CBB89 /* SceneDelegate.swift in Sources */,
+				05A1F8F626C5053C00F95EB3 /* ImageDownloaderRouter.swift in Sources */,
 				054CF9DC26C278160020AA1F /* DetailView.swift in Sources */,
 				0550946326BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift in Sources */,
+				05A1F8F426C5052A00F95EB3 /* ImageDownloaderInteractor.swift in Sources */,
 				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
 				0584AEE326B2D88A0068E184 /* DetailViewController.swift in Sources */,
+				05A1F8F226C5050F00F95EB3 /* ImageDownloaderPresenter.swift in Sources */,
 				0550000326BC206600750297 /* MainCoordinator.swift in Sources */,
 				0550000126BC1FDB00750297 /* CoordinatorProtocol.swift in Sources */,
 				059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */,
+				0583DBD026C859C500BA8BE5 /* InterfaceIconsEnum.swift in Sources */,
+				05A1F8EE26C504BF00F95EB3 /* ImageDownloaderViewController.swift in Sources */,
 				059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */,
+				0583DBD226C85A6700BA8BE5 /* ImageDownloaderEnum.swift in Sources */,
 				0550946526BA6816008F02A4 /* UnsplashPictureObject.swift in Sources */,
 				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
+				053289BC26C65F3E0004DBDD /* NetworkImageLoader.swift in Sources */,
 				0584AEE326B2D88A0068E184 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
