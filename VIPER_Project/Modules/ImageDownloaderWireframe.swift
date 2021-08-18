@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-protocol ImageDownloaderWireframeProtocol {
+protocol ImageDownloaderWireframeProtocol: AnyObject {
     func buildImageDownloaderModule() -> UIViewController
 }
 
 final class ImageDownloaderWireframe {
     struct Dependency {
-        var showAlert: ((String) -> Void)
+        var showAlert: ((ImageLoaderError) -> Void)
     }
 
     let dependency: Dependency
@@ -29,9 +29,10 @@ extension ImageDownloaderWireframe: ImageDownloaderWireframeProtocol {
     func buildImageDownloaderModule() -> UIViewController {
         let interactor = ImageDownloaderInteractor()
         let router = ImageDownloaderRouter(showAlert: dependency.showAlert)
-        let presenter = ImageDownloaderPresenter(
-            interactor: interactor, router: router, image: UIImage(systemName: InterfaceIconsEnum.defaultImage.rawValue)
-        )
+        let image = InterfaceIconsEnum.defaultImage.image
+        let presenter = ImageDownloaderPresenter(interactor: interactor,
+                                                 router: router,
+                                                 image: image)
 
         let imageDownloaderViewController = ImageDownloaderViewController()
         imageDownloaderViewController.presenter = presenter

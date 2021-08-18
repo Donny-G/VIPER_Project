@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol DetailViewPresenterProtocol {
+protocol DetailViewPresenterProtocol: AnyObject {
     func viewDidLoad(imageView: UIImageView)
 }
 

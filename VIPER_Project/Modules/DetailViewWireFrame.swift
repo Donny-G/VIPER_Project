@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol DetailViewWireFrameProtocol {
+protocol DetailViewWireFrameProtocol: AnyObject {
     func buildDetailViewModule(image: UIImage) -> UIViewController
 }
 

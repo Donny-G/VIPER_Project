@@ -16,6 +16,11 @@
 		0550946526BA6816008F02A4 /* UnsplashPictureObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550946426BA6816008F02A4 /* UnsplashPictureObject.swift */; };
 		056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B835E26AF01BE0082937E /* MainScreenWireframe.swift */; };
 		056B836126AF065F0082937E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B836026AF065F0082937E /* NetworkManager.swift */; };
+		056D49E726CCE946004D3A5F /* ButtonFActory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D49E626CCE946004D3A5F /* ButtonFActory.swift */; };
+		056D49EA26CD261B004D3A5F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D49E926CD261B004D3A5F /* UIColor.swift */; };
+		056D49EC26CD2624004D3A5F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D49EB26CD2624004D3A5F /* UIView.swift */; };
+		056D49EE26CD27B8004D3A5F /* Stackview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D49ED26CD27B8004D3A5F /* Stackview.swift */; };
+		056D49F226CD43A0004D3A5F /* AlertMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D49F126CD43A0004D3A5F /* AlertMessageManager.swift */; };
 		0583DBD026C859C500BA8BE5 /* InterfaceIconsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583DBCF26C859C500BA8BE5 /* InterfaceIconsEnum.swift */; };
 		0583DBD226C85A6700BA8BE5 /* ImageDownloaderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583DBD126C85A6700BA8BE5 /* ImageDownloaderEnum.swift */; };
 		0584AEE326B2D88A0068E184 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE226B2D88A0068E184 /* DetailViewController.swift */; };
@@ -66,6 +71,11 @@
 		0550946426BA6816008F02A4 /* UnsplashPictureObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPictureObject.swift; sourceTree = "<group>"; };
 		056B835E26AF01BE0082937E /* MainScreenWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenWireframe.swift; sourceTree = "<group>"; };
 		056B836026AF065F0082937E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		056D49E626CCE946004D3A5F /* ButtonFActory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFActory.swift; sourceTree = "<group>"; };
+		056D49E926CD261B004D3A5F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		056D49EB26CD2624004D3A5F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		056D49ED26CD27B8004D3A5F /* Stackview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stackview.swift; sourceTree = "<group>"; };
+		056D49F126CD43A0004D3A5F /* AlertMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageManager.swift; sourceTree = "<group>"; };
 		0583DBCF26C859C500BA8BE5 /* InterfaceIconsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceIconsEnum.swift; sourceTree = "<group>"; };
 		0583DBD126C85A6700BA8BE5 /* ImageDownloaderEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderEnum.swift; sourceTree = "<group>"; };
 		0584AEE226B2D88A0068E184 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +148,24 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		056D49E526CCE929004D3A5F /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				056D49E626CCE946004D3A5F /* ButtonFActory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		056D49E826CD2605004D3A5F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				056D49E926CD261B004D3A5F /* UIColor.swift */,
+				056D49EB26CD2624004D3A5F /* UIView.swift */,
+				056D49ED26CD27B8004D3A5F /* Stackview.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		0583DBCE26C8597B00BA8BE5 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +231,7 @@
 			children = (
 				056B836026AF065F0082937E /* NetworkManager.swift */,
 				053289BB26C65F3E0004DBDD /* NetworkImageLoader.swift */,
+				056D49F126CD43A0004D3A5F /* AlertMessageManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -243,6 +272,8 @@
 		05BBF46026A9536B005CBB89 /* VIPER_Project */ = {
 			isa = PBXGroup;
 			children = (
+				056D49E826CD2605004D3A5F /* Extensions */,
+				056D49E526CCE929004D3A5F /* Factories */,
 				0583DBCE26C8597B00BA8BE5 /* Enums */,
 				0550FFFF26BC1F7900750297 /* Coordinators */,
 				0550946126BA65E7008F02A4 /* Entities */,
@@ -436,19 +467,24 @@
 				056B836126AF065F0082937E /* NetworkManager.swift in Sources */,
 				05BBF46426A9536B005CBB89 /* SceneDelegate.swift in Sources */,
 				05A1F8F626C5053C00F95EB3 /* ImageDownloaderRouter.swift in Sources */,
+				056D49F226CD43A0004D3A5F /* AlertMessageManager.swift in Sources */,
+				056D49E726CCE946004D3A5F /* ButtonFActory.swift in Sources */,
 				054CF9DC26C278160020AA1F /* DetailView.swift in Sources */,
 				0550946326BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift in Sources */,
 				05A1F8F426C5052A00F95EB3 /* ImageDownloaderInteractor.swift in Sources */,
 				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
 				0584AEE326B2D88A0068E184 /* DetailViewController.swift in Sources */,
+				056D49EC26CD2624004D3A5F /* UIView.swift in Sources */,
 				05A1F8F226C5050F00F95EB3 /* ImageDownloaderPresenter.swift in Sources */,
 				0550000326BC206600750297 /* MainCoordinator.swift in Sources */,
+				056D49EA26CD261B004D3A5F /* UIColor.swift in Sources */,
 				0550000126BC1FDB00750297 /* CoordinatorProtocol.swift in Sources */,
 				059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */,
 				0583DBD026C859C500BA8BE5 /* InterfaceIconsEnum.swift in Sources */,
 				05A1F8EE26C504BF00F95EB3 /* ImageDownloaderViewController.swift in Sources */,
 				059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */,
 				0583DBD226C85A6700BA8BE5 /* ImageDownloaderEnum.swift in Sources */,
+				056D49EE26CD27B8004D3A5F /* Stackview.swift in Sources */,
 				0550946526BA6816008F02A4 /* UnsplashPictureObject.swift in Sources */,
 				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
 				053289BC26C65F3E0004DBDD /* NetworkImageLoader.swift in Sources */,

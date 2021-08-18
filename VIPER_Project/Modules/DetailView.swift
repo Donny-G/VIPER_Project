@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol GestureRecognizingProtocol {
+protocol GestureRecognizingProtocol: AnyObject {
     func pinchGestureRecognizerInit()
     func panGestureRecognizerInit()
 }

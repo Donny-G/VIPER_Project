@@ -22,7 +22,7 @@ final class MainScreenViewController: UIViewController {
         super.viewDidLoad()
         presenter?.viewDidLoad(tableView: tableView)
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "network"),
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: InterfaceIconsEnum.enterUrlButton.image,
                                                             style: .plain,
                                                             target: self,
                                                             action: #selector(urlView))

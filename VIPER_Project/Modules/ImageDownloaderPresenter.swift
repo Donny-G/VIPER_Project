@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol ImageDownloaderPresenterProtocol {
+protocol ImageDownloaderPresenterProtocol: AnyObject {
     func viewDidLoad(view: ImageDownloaderView)
     func acceptDownload()
     func getUrlFrom(url: String?)
@@ -31,7 +31,20 @@ final class ImageDownloaderPresenter {
 extension ImageDownloaderPresenter: ImageDownloaderPresenterProtocol {
     func viewDidLoad(view: ImageDownloaderView) {
         self.view = view
+
         view.previewImageView.image = image
+
+        view.acceptButton.addAction(UIAction(handler: { _ in
+            self.acceptDownload()
+        }), for: .touchUpInside)
+
+        view.urlTextField.addAction(UIAction(handler: { _ in
+            self.getUrlFrom(url: view.urlTextField.text)
+        }), for: .editingDidEndOnExit)
+
+        view.enterUrlButton.addAction(UIAction(handler: { _ in
+            self.getUrlFrom(url: view.urlTextField.text)
+        }), for: .touchUpInside)
     }
 
     func acceptDownload() {
@@ -39,18 +52,18 @@ extension ImageDownloaderPresenter: ImageDownloaderPresenterProtocol {
     }
 
     func getUrlFrom(url: String?) {
-        let imageHandler: (UIImage) -> Void = { image in
-            DispatchQueue.main.async {
-                self.view?.previewImageView.image = image
+        let completionHandler: (Result <UIImage, ImageLoaderError>) -> Void = { result in
+            switch result {
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.view?.previewImageView.image = image
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.router.presentAlert(error: error)
+                }
             }
         }
-
-        let errorHandler: (String) -> Void = { error in
-            DispatchQueue.main.async {
-                self.router.presentAlert(error: error)
-            }
-        }
-
-        interactor.loadImage(from: url, imageCompletion: imageHandler, errorCompletion: errorHandler)
+        interactor.loadImage(from: url, completion: completionHandler)
     }
 }

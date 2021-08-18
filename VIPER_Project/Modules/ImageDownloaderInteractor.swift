@@ -8,12 +8,10 @@
 import Foundation
 import UIKit
 
-protocol ImageDownloaderInteractorProtocol {
+protocol ImageDownloaderInteractorProtocol: AnyObject {
     func loadImage(
         from url: String?,
-        imageCompletion: @escaping (UIImage) -> Void,
-        errorCompletion: @escaping (String) -> Void
-    )
+        completion: @escaping (Result <UIImage, ImageLoaderError>) -> Void)
 }
 
 final class ImageDownloaderInteractor {
@@ -21,17 +19,15 @@ final class ImageDownloaderInteractor {
 }
 
 extension ImageDownloaderInteractor: ImageDownloaderInteractorProtocol {
-
-    func loadImage(
-        from url: String?,
-        imageCompletion: @escaping (UIImage) -> Void,
-        errorCompletion: @escaping (String) -> Void
-    ) {
+    func loadImage(from url: String?, completion: @escaping (Result <UIImage, ImageLoaderError>) -> Void) {
         if let url = url {
-            NetworkImageLoader().fetchImage(inputURL: url) { image in
-                imageCompletion(image)
-            } errorCompletion: { error in
-                errorCompletion(error)
+            NetworkImageLoader().fetchImage(inputURL: url) { result in
+                switch result {
+                case .success(let image):
+                    completion(.success(image))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
         }
     }
