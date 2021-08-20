@@ -37,14 +37,13 @@ extension MainCoordinator: CoordinatorProtocol {
     }
 }
 
+// MARK: - Private
 private extension MainCoordinator {
-    // MARK: - showDetailView method
     func showDetailView(with image: UIImage) {
         let detailViewController = DetailViewWireFrame().buildDetailViewModule(image: image)
         navigationController.pushViewController(detailViewController, animated: true)
     }
 
-    // MARK: - showImageDownloaderView method
     func showImageDownloaderView() {
         let showAlert: (ImageLoaderError) -> Void = { [weak self] in
             self?.showAlert(with: $0)
@@ -56,16 +55,15 @@ private extension MainCoordinator {
         navigationController.pushViewController(imageDownloaderController, animated: true)
     }
 
-    // MARK: - showAlert method
     func showAlert(with error: ImageLoaderError) {
         let alert = UIAlertController(
-            title: ImageDownloaderEnum.alertTitle.rawValue,
-            message: AlertMessage.getMessage(from: error),
+            title: NSLocalizedString("alertTitle", comment: "Title for alert"),
+            message: error.localizedDescription(),
             preferredStyle: .alert
         )
 
         alert.addAction(
-            UIAlertAction(title: ImageDownloaderEnum.alertOkButtonTitle.rawValue,
+            UIAlertAction(title: NSLocalizedString("alertOkButtonTitle", comment: "Ok"),
                           style: .cancel,
                           handler: nil)
         )

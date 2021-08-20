@@ -9,11 +9,17 @@ import Foundation
 import UIKit
 
 extension UIStackView {
-    func config(axis: NSLayoutConstraint.Axis ) {
+    func configureStackView(axis: NSLayoutConstraint.Axis) {
         self.axis = axis
         self.distribution = .fill
         self.alignment = .fill
         self.spacing = 10
         self.translatesAutoresizingMaskIntoConstraints = false
+    }
+
+    func addViews(from array: [UIView]) {
+        for view in array {
+            self.addArrangedSubview(view)
+        }
     }
 }

@@ -15,7 +15,7 @@ final class MainScreenViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = tableView
-        title = MainScreenEnum.title.rawValue
+        title = NSLocalizedString("title", comment: "App title")
     }
 
     override func viewDidLoad() {

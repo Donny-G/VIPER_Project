@@ -9,26 +9,19 @@ import Foundation
 import UIKit
 
 protocol ImageDownloaderInteractorProtocol: AnyObject {
-    func loadImage(
-        from url: String?,
-        completion: @escaping (Result <UIImage, ImageLoaderError>) -> Void)
+    func loadImage(from url: URL,
+                   completion: @escaping (Result <UIImage, ImageLoaderError>) -> Void)
 }
 
 final class ImageDownloaderInteractor {
 
 }
 
+// MARK: - ImageDownloaderInteractorProtocol
 extension ImageDownloaderInteractor: ImageDownloaderInteractorProtocol {
-    func loadImage(from url: String?, completion: @escaping (Result <UIImage, ImageLoaderError>) -> Void) {
-        if let url = url {
-            NetworkImageLoader().fetchImage(inputURL: url) { result in
-                switch result {
-                case .success(let image):
-                    completion(.success(image))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
-            }
+    func loadImage(from url: URL, completion: @escaping (Result <UIImage, ImageLoaderError>) -> Void) {
+            NetworkImageLoader.fetchImage(from: url) { result in
+                completion(result)
         }
     }
 }

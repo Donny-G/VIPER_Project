@@ -11,7 +11,7 @@ import UIKit
 protocol ImageDownloaderPresenterProtocol: AnyObject {
     func viewDidLoad(view: ImageDownloaderView)
     func acceptDownload()
-    func getUrlFrom(url: String?)
+    func getUrlFrom(textfield urlString: String?)
 }
 
 final class ImageDownloaderPresenter {
@@ -28,42 +28,45 @@ final class ImageDownloaderPresenter {
     }
 }
 
+// MARK: - ImageDownloaderPresenterProtocol
 extension ImageDownloaderPresenter: ImageDownloaderPresenterProtocol {
     func viewDidLoad(view: ImageDownloaderView) {
         self.view = view
 
-        view.previewImageView.image = image
+        if let image = image {
+            view.updateView(with: image)
+        }
 
-        view.acceptButton.addAction(UIAction(handler: { _ in
-            self.acceptDownload()
-        }), for: .touchUpInside)
+        view.configureAcceptButtonAction {[weak self] _ in
+            self?.acceptDownload()
+        }
 
-        view.urlTextField.addAction(UIAction(handler: { _ in
-            self.getUrlFrom(url: view.urlTextField.text)
-        }), for: .editingDidEndOnExit)
+        view.configureURLTextFieldAction {[weak self] _ in
+            self?.getUrlFrom(textfield: view.getURLFromTextField())
+        }
 
-        view.enterUrlButton.addAction(UIAction(handler: { _ in
-            self.getUrlFrom(url: view.urlTextField.text)
-        }), for: .touchUpInside)
+        view.configureEnterURLButton {[weak self] _ in
+            self?.getUrlFrom(textfield: view.getURLFromTextField())
+        }
     }
 
     func acceptDownload() {
         print("saved")
     }
 
-    func getUrlFrom(url: String?) {
-        let completionHandler: (Result <UIImage, ImageLoaderError>) -> Void = { result in
-            switch result {
-            case .success(let image):
-                DispatchQueue.main.async {
-                    self.view?.previewImageView.image = image
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self.router.presentAlert(error: error)
+    func getUrlFrom(textfield urlString: String?) {
+        guard let urlString = urlString, !urlString.isEmpty, let url = URL(string: urlString) else {
+            return router.presentAlert(with: .unsupportedURL)
+        }
+        interactor.loadImage(from: url) {[weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let image):
+                        self?.view?.updateView(with: image)
+                case .failure(let error):
+                        self?.router.presentAlert(with: error)
                 }
             }
         }
-        interactor.loadImage(from: url, completion: completionHandler)
     }
 }

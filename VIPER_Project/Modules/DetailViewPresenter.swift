@@ -21,7 +21,6 @@ final class DetailViewPresenter {
 }
 
 // MARK: - DetailViewPresenterProtocol
-
 extension DetailViewPresenter: DetailViewPresenterProtocol {
     func viewDidLoad(imageView: UIImageView) {
         imageView.image = image

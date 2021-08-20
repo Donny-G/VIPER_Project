@@ -25,6 +25,7 @@ final class ImageDownloaderWireframe {
 
 }
 
+// MARK: - ImageDownloaderWireframeProtocol
 extension ImageDownloaderWireframe: ImageDownloaderWireframeProtocol {
     func buildImageDownloaderModule() -> UIViewController {
         let interactor = ImageDownloaderInteractor()

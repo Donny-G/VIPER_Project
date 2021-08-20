@@ -16,6 +16,7 @@ final class DetailViewWireFrame {
 
 }
 
+// MARK: - DetailViewWireFrameProtocol
 extension DetailViewWireFrame: DetailViewWireFrameProtocol {
     func buildDetailViewModule(image: UIImage) -> UIViewController {
         let presenter = DetailViewPresenter(image: image)

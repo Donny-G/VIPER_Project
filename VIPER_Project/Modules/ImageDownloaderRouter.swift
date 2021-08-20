@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ImageDownloaderRouterProtocol: AnyObject {
-    func presentAlert(error: ImageLoaderError)
+    func presentAlert(with error: ImageLoaderError)
 }
 
 final class ImageDownloaderRouter {
@@ -19,8 +19,9 @@ final class ImageDownloaderRouter {
     }
 }
 
+// MARK: - ImageDownloaderRouterProtocol
 extension ImageDownloaderRouter: ImageDownloaderRouterProtocol {
-    func presentAlert(error: ImageLoaderError) {
+    func presentAlert(with error: ImageLoaderError) {
         showAlert(error)
     }
 }

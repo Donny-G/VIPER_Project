@@ -30,7 +30,8 @@ extension MainScreenPresenter: MainScreenPresenterProtocol {
     func viewDidLoad(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: MainScreenEnum.cell.rawValue)
+        tableView.register(UITableViewCell.self,
+                           forCellReuseIdentifier: NSLocalizedString("cell", comment: "Cell identfier"))
 
         let handler: ([JSONPlaceHolderPictureObject]) -> Void = { [weak self] in
             self?.pictures = $0.compactMap { $0.title }
@@ -54,7 +55,9 @@ extension MainScreenPresenter: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MainScreenEnum.cell.rawValue, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: NSLocalizedString("cell",
+            comment: "Cell identfier"),
+            for: indexPath)
         if let pictures = self.pictures {
             cell.textLabel?.text = pictures[indexPath.row]
         }
@@ -63,9 +66,8 @@ extension MainScreenPresenter: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let handler: (UIImage) -> Void = {image in
-            self.router.presentDetailView(image: image)
+        interactor.loadImage(index: indexPath.row) {[weak self] image in
+            self?.router.presentDetailView(image: image)
         }
-        interactor.loadImage(index: indexPath.row, completion: handler)
     }
 }

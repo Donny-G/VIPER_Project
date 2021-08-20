@@ -15,6 +15,9 @@ enum InterfaceIconsEnum: String {
     case errorImage = "eyes"
 
     var image: UIImage? {
-        UIImage(systemName: self.rawValue)
+        guard let image = UIImage(systemName: self.rawValue) else { assertionFailure("There is no image with this name")
+            return nil
+        }
+        return image
     }
 }

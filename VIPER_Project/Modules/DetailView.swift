@@ -30,7 +30,6 @@ final class DetailView: UIImageView {
 }
 
 // MARK: - GestureRecognizingProtocol
-
 extension DetailView: GestureRecognizingProtocol {
     func pinchGestureRecognizerInit() {
         let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(didScaleImageView(_:)))
