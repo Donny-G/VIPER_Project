@@ -15,6 +15,7 @@ protocol MainScreenWireFrameProtocol: AnyObject {
 final class MainScreenWireFrame {
     struct Dependency {
         var showImage: ((UIImage) -> Void)
+        var showImageDownloaderView: (() -> Void)
     }
 
     let dependency: Dependency
@@ -28,7 +29,10 @@ final class MainScreenWireFrame {
 extension MainScreenWireFrame: MainScreenWireFrameProtocol {
     func buildModule() -> UIViewController {
         let interactor = MainScreenInteractor()
-        let router = MainScreenRouter(showImage: self.dependency.showImage)
+        let router = MainScreenRouter(
+            showImage: self.dependency.showImage,
+            showImageDownloaderView: self.dependency.showImageDownloaderView
+        )
         let presenter = MainScreenPresenter(interactor: interactor, router: router)
 
         let mainScreenViewController = MainScreenViewController()

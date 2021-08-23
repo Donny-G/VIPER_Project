@@ -7,20 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		053D1D0E26B93EC300ACCC22 /* MainScreenEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D1D0D26B93EC300ACCC22 /* MainScreenEnum.swift */; };
+		053289BC26C65F3E0004DBDD /* NetworkImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053289BB26C65F3E0004DBDD /* NetworkImageLoader.swift */; };
 		054CF9DC26C278160020AA1F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054CF9DB26C278160020AA1F /* DetailView.swift */; };
 		0550000126BC1FDB00750297 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550000026BC1FDB00750297 /* CoordinatorProtocol.swift */; };
 		0550000326BC206600750297 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550000226BC206600750297 /* MainCoordinator.swift */; };
 		0550946326BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550946226BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift */; };
-		0550946526BA6816008F02A4 /* UnsplashPictureObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550946426BA6816008F02A4 /* UnsplashPictureObject.swift */; };
 		056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B835E26AF01BE0082937E /* MainScreenWireframe.swift */; };
-		056B836126AF065F0082937E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B836026AF065F0082937E /* NetworkManager.swift */; };
+		056D49E726CCE946004D3A5F /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D49E626CCE946004D3A5F /* ButtonFactory.swift */; };
+		056D49EA26CD261B004D3A5F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D49E926CD261B004D3A5F /* UIColor.swift */; };
+		056D49EC26CD2624004D3A5F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D49EB26CD2624004D3A5F /* UIView.swift */; };
+		056D49EE26CD27B8004D3A5F /* Stackview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D49ED26CD27B8004D3A5F /* Stackview.swift */; };
+		0583DBD026C859C500BA8BE5 /* InterfaceIconsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583DBCF26C859C500BA8BE5 /* InterfaceIconsEnum.swift */; };
+		0584505B26CE354B007CFBBA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0584505A26CE354B007CFBBA /* Localizable.strings */; };
+		0584506126CE507F007CFBBA /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584506026CE507F007CFBBA /* UIControl.swift */; };
+		0584506326CE84CE007CFBBA /* TextFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584506226CE84CE007CFBBA /* TextFieldFactory.swift */; };
+		0584506526CE84EF007CFBBA /* ImageViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584506426CE84EF007CFBBA /* ImageViewFactory.swift */; };
 		0584AEE326B2D88A0068E184 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE226B2D88A0068E184 /* DetailViewController.swift */; };
 		0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEE426B2D8AA0068E184 /* DetailViewPresenter.swift */; };
 		0584AEEB26B2D8FC0068E184 /* DetailViewWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584AEEA26B2D8FC0068E184 /* DetailViewWireFrame.swift */; };
 		059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521726AAC2420004997C /* MainScreenPresenter.swift */; };
 		059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521926AAC2710004997C /* MainScreenInteractor.swift */; };
 		059B521C26AAC2920004997C /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B521B26AAC2920004997C /* MainScreenRouter.swift */; };
+		05A1F8EE26C504BF00F95EB3 /* ImageDownloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1F8ED26C504BF00F95EB3 /* ImageDownloaderViewController.swift */; };
+		05A1F8F026C504F600F95EB3 /* ImageDownloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1F8EF26C504F600F95EB3 /* ImageDownloaderView.swift */; };
+		05A1F8F226C5050F00F95EB3 /* ImageDownloaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1F8F126C5050F00F95EB3 /* ImageDownloaderPresenter.swift */; };
+		05A1F8F426C5052A00F95EB3 /* ImageDownloaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1F8F326C5052A00F95EB3 /* ImageDownloaderInteractor.swift */; };
+		05A1F8F626C5053C00F95EB3 /* ImageDownloaderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1F8F526C5053C00F95EB3 /* ImageDownloaderRouter.swift */; };
+		05A1F8F826C5055300F95EB3 /* ImageDownloaderWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1F8F726C5055300F95EB3 /* ImageDownloaderWireframe.swift */; };
 		05BBF46226A9536B005CBB89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF46126A9536B005CBB89 /* AppDelegate.swift */; };
 		05BBF46426A9536B005CBB89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF46326A9536B005CBB89 /* SceneDelegate.swift */; };
 		05BBF46626A9536B005CBB89 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF46526A9536B005CBB89 /* MainScreenViewController.swift */; };
@@ -48,20 +61,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		053D1D0D26B93EC300ACCC22 /* MainScreenEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenEnum.swift; sourceTree = "<group>"; };
+		053289BB26C65F3E0004DBDD /* NetworkImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageLoader.swift; sourceTree = "<group>"; };
 		054CF9DB26C278160020AA1F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		0550000026BC1FDB00750297 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		0550000226BC206600750297 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		0550946226BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPlaceHolderPictureObject.swift; sourceTree = "<group>"; };
-		0550946426BA6816008F02A4 /* UnsplashPictureObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPictureObject.swift; sourceTree = "<group>"; };
 		056B835E26AF01BE0082937E /* MainScreenWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenWireframe.swift; sourceTree = "<group>"; };
-		056B836026AF065F0082937E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		056D49E626CCE946004D3A5F /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
+		056D49E926CD261B004D3A5F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		056D49EB26CD2624004D3A5F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		056D49ED26CD27B8004D3A5F /* Stackview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stackview.swift; sourceTree = "<group>"; };
+		0583DBCF26C859C500BA8BE5 /* InterfaceIconsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceIconsEnum.swift; sourceTree = "<group>"; };
+		0584505A26CE354B007CFBBA /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		0584506026CE507F007CFBBA /* UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
+		0584506226CE84CE007CFBBA /* TextFieldFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFactory.swift; sourceTree = "<group>"; };
+		0584506426CE84EF007CFBBA /* ImageViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewFactory.swift; sourceTree = "<group>"; };
 		0584AEE226B2D88A0068E184 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0584AEE426B2D8AA0068E184 /* DetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPresenter.swift; sourceTree = "<group>"; };
 		0584AEEA26B2D8FC0068E184 /* DetailViewWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewWireFrame.swift; sourceTree = "<group>"; };
 		059B521726AAC2420004997C /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
 		059B521926AAC2710004997C /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
 		059B521B26AAC2920004997C /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
+		05A1F8ED26C504BF00F95EB3 /* ImageDownloaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderViewController.swift; sourceTree = "<group>"; };
+		05A1F8EF26C504F600F95EB3 /* ImageDownloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderView.swift; sourceTree = "<group>"; };
+		05A1F8F126C5050F00F95EB3 /* ImageDownloaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderPresenter.swift; sourceTree = "<group>"; };
+		05A1F8F326C5052A00F95EB3 /* ImageDownloaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderInteractor.swift; sourceTree = "<group>"; };
+		05A1F8F526C5053C00F95EB3 /* ImageDownloaderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderRouter.swift; sourceTree = "<group>"; };
+		05A1F8F726C5055300F95EB3 /* ImageDownloaderWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderWireframe.swift; sourceTree = "<group>"; };
 		05BBF45E26A9536B005CBB89 /* VIPER_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPER_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BBF46126A9536B005CBB89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05BBF46326A9536B005CBB89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				0550946226BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift */,
-				0550946426BA6816008F02A4 /* UnsplashPictureObject.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -118,6 +143,27 @@
 				0550000226BC206600750297 /* MainCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		056D49E526CCE929004D3A5F /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				056D49E626CCE946004D3A5F /* ButtonFactory.swift */,
+				0584506226CE84CE007CFBBA /* TextFieldFactory.swift */,
+				0584506426CE84EF007CFBBA /* ImageViewFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		056D49E826CD2605004D3A5F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				056D49E926CD261B004D3A5F /* UIColor.swift */,
+				056D49EB26CD2624004D3A5F /* UIView.swift */,
+				056D49ED26CD27B8004D3A5F /* Stackview.swift */,
+				0584506026CE507F007CFBBA /* UIControl.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0584AEE126B2D8470068E184 /* DetailView */ = {
@@ -142,6 +188,7 @@
 		059B521326AAC0F30004997C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				05A1F8EC26C503DE00F95EB3 /* ImageDownloader */,
 				0584AEE126B2D8470068E184 /* DetailView */,
 				059B521426AAC1140004997C /* MainScreen */,
 			);
@@ -151,7 +198,6 @@
 		059B521426AAC1140004997C /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				053D1D0D26B93EC300ACCC22 /* MainScreenEnum.swift */,
 				05BBF46526A9536B005CBB89 /* MainScreenViewController.swift */,
 				059B521726AAC2420004997C /* MainScreenPresenter.swift */,
 				059B521926AAC2710004997C /* MainScreenInteractor.swift */,
@@ -166,6 +212,8 @@
 			children = (
 				05BBF46126A9536B005CBB89 /* AppDelegate.swift */,
 				05BBF46326A9536B005CBB89 /* SceneDelegate.swift */,
+				0584505A26CE354B007CFBBA /* Localizable.strings */,
+				0583DBCF26C859C500BA8BE5 /* InterfaceIconsEnum.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -173,9 +221,22 @@
 		059B522326AB0D0B0004997C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				056B836026AF065F0082937E /* NetworkManager.swift */,
+				053289BB26C65F3E0004DBDD /* NetworkImageLoader.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		05A1F8EC26C503DE00F95EB3 /* ImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				05A1F8ED26C504BF00F95EB3 /* ImageDownloaderViewController.swift */,
+				05A1F8EF26C504F600F95EB3 /* ImageDownloaderView.swift */,
+				05A1F8F126C5050F00F95EB3 /* ImageDownloaderPresenter.swift */,
+				05A1F8F326C5052A00F95EB3 /* ImageDownloaderInteractor.swift */,
+				05A1F8F526C5053C00F95EB3 /* ImageDownloaderRouter.swift */,
+				05A1F8F726C5055300F95EB3 /* ImageDownloaderWireframe.swift */,
+			);
+			name = ImageDownloader;
 			sourceTree = "<group>";
 		};
 		05BBF45526A9536B005CBB89 = {
@@ -201,6 +262,8 @@
 		05BBF46026A9536B005CBB89 /* VIPER_Project */ = {
 			isa = PBXGroup;
 			children = (
+				056D49E826CD2605004D3A5F /* Extensions */,
+				056D49E526CCE929004D3A5F /* Factories */,
 				0550FFFF26BC1F7900750297 /* Coordinators */,
 				0550946126BA65E7008F02A4 /* Entities */,
 				059B522326AB0D0B0004997C /* Services */,
@@ -336,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05BBF46E26A9536C005CBB89 /* LaunchScreen.storyboard in Resources */,
+				0584505B26CE354B007CFBBA /* Localizable.strings in Resources */,
 				05BBF46B26A9536C005CBB89 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,22 +448,34 @@
 			files = (
 				059B521C26AAC2920004997C /* MainScreenRouter.swift in Sources */,
 				0584AEEB26B2D8FC0068E184 /* DetailViewWireFrame.swift in Sources */,
+				05A1F8F826C5055300F95EB3 /* ImageDownloaderWireframe.swift in Sources */,
 				05BBF46626A9536B005CBB89 /* MainScreenViewController.swift in Sources */,
-				053D1D0E26B93EC300ACCC22 /* MainScreenEnum.swift in Sources */,
+				05A1F8F026C504F600F95EB3 /* ImageDownloaderView.swift in Sources */,
 				05BBF46226A9536B005CBB89 /* AppDelegate.swift in Sources */,
 				056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */,
-				056B836126AF065F0082937E /* NetworkManager.swift in Sources */,
+				0584506526CE84EF007CFBBA /* ImageViewFactory.swift in Sources */,
 				05BBF46426A9536B005CBB89 /* SceneDelegate.swift in Sources */,
+				0584506126CE507F007CFBBA /* UIControl.swift in Sources */,
+				05A1F8F626C5053C00F95EB3 /* ImageDownloaderRouter.swift in Sources */,
+				0584506326CE84CE007CFBBA /* TextFieldFactory.swift in Sources */,
+				056D49E726CCE946004D3A5F /* ButtonFactory.swift in Sources */,
 				054CF9DC26C278160020AA1F /* DetailView.swift in Sources */,
 				0550946326BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift in Sources */,
+				05A1F8F426C5052A00F95EB3 /* ImageDownloaderInteractor.swift in Sources */,
 				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
 				0584AEE326B2D88A0068E184 /* DetailViewController.swift in Sources */,
+				056D49EC26CD2624004D3A5F /* UIView.swift in Sources */,
+				05A1F8F226C5050F00F95EB3 /* ImageDownloaderPresenter.swift in Sources */,
 				0550000326BC206600750297 /* MainCoordinator.swift in Sources */,
+				056D49EA26CD261B004D3A5F /* UIColor.swift in Sources */,
 				0550000126BC1FDB00750297 /* CoordinatorProtocol.swift in Sources */,
 				059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */,
+				0583DBD026C859C500BA8BE5 /* InterfaceIconsEnum.swift in Sources */,
+				05A1F8EE26C504BF00F95EB3 /* ImageDownloaderViewController.swift in Sources */,
 				059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */,
-				0550946526BA6816008F02A4 /* UnsplashPictureObject.swift in Sources */,
+				056D49EE26CD27B8004D3A5F /* Stackview.swift in Sources */,
 				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
+				053289BC26C65F3E0004DBDD /* NetworkImageLoader.swift in Sources */,
 				0584AEE326B2D88A0068E184 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +527,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -512,6 +589,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

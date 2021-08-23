@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  VIPER_Project
+
+  Created by Denis Golovizin on 19.08.2021.
+  
+*/
+"urlTextFieldPlaceholder" = "Enter URL";
+"acceptButton" = "Save";
+"alertTitle" = "Warning, something get wrong";
+"alertOkButtonTitle" = "Ok";
+"title" = "VIPER Project";
+"cell" = "Cell";
