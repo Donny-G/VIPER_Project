@@ -7,39 +7,35 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 protocol MainScreenInteractorProtocol: AnyObject {
-    func loadPicturesList(completion: ([JSONPlaceHolderPictureObject]) -> Void)
-    func loadImage(index: Int, completion: (UIImage) -> Void)
+    func loadPicturesList(completion: @escaping (Result <Results<RealmImageObject>, ApplicationError>) -> Void)
+    func loadImage(index: Int, completion: @escaping (Result <UIImage, ApplicationError>) -> Void)
 }
 
 final class MainScreenInteractor {
-    private var mocPictureList: [JSONPlaceHolderPictureObject] = [
-        JSONPlaceHolderPictureObject(id: 1,
-                                     title: "aerial view of green trees during daytime",
-                                     url: "aerial view of green trees during daytime"),
-        JSONPlaceHolderPictureObject(id: 2,
-                                     title: "white and pink flower in tilt shift lens",
-                                     url: "white and pink flower in tilt shift lens"),
-        JSONPlaceHolderPictureObject(id: 3,
-                                     title: "black and white ceramic mugs on brown wooden table",
-                                     url: "black and white ceramic mugs on brown wooden table"),
-        JSONPlaceHolderPictureObject(id: 4,
-                                     title: "white concrete building under blue sky during daytime",
-                                     url: "white concrete building under blue sky during daytime")
-    ]
+
 }
 
 // MARK: - MainScreenInteractorProtocol
 extension MainScreenInteractor: MainScreenInteractorProtocol {
-    func loadPicturesList(completion: ([JSONPlaceHolderPictureObject]) -> Void) {
-        completion(mocPictureList)
+    func loadPicturesList(completion: @escaping (Result <Results<RealmImageObject>, ApplicationError>) -> Void) {
+        RealmObjectManager.loadRealmDB { result in
+            completion(result)
+        }
     }
 
-    func loadImage(index: Int, completion: (UIImage) -> Void) {
-        let imageName = mocPictureList[index].url
-        if let imageToShow = UIImage(named: imageName) {
-            completion(imageToShow)
+    func loadImage(index: Int, completion: @escaping (Result <UIImage, ApplicationError>) -> Void) {
+        RealmObjectManager.loadRealmDB { result in
+            switch result {
+            case .success(let savedImages):
+                if let imageData = savedImages[index].image, let imageToLoad = UIImage(data: imageData) {
+                    completion(.success(imageToLoad))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 }

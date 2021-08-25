@@ -16,12 +16,20 @@ struct TextFieldStyle {
         color: UIColor.urlTextField,
         placeholder: NSLocalizedString("urlTextFieldPlaceholder",
                                        comment: "Placeholder"))
+
+    static let titleTextFieldStyle = TextFieldStyle(
+        color: UIColor.urlTextField,
+        placeholder: NSLocalizedString("titleTextFieldPlaceholder", comment: "Placeholder"))
 }
 
 final class TextFieldFactory {
 
     static func buildURLTextField() -> UITextField {
         return buildTextField(with: .urlTextFieldStyle)
+    }
+
+    static func buildTitleTextField() -> UITextField {
+        return buildTextField(with: .titleTextFieldStyle)
     }
 
     static func buildTextField(with config: TextFieldStyle) -> UITextField {

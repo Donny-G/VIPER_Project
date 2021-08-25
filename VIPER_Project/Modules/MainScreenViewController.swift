@@ -28,6 +28,10 @@ final class MainScreenViewController: UIViewController {
                                                             action: #selector(urlView))
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        presenter?.viewDidAppear(tableView: tableView)
+    }
+
     @objc func urlView() {
         presenter?.openImageDownloader()
     }

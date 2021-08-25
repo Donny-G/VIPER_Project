@@ -1,5 +1,6 @@
 excluded:
   - Carthage
+  - /Users/Denis_Golovizin/Desktop/VIPER_Project/Pods/RealmSwift/RealmSwift/
 
 identifier_name:
          excluded: id # Allow naming as id

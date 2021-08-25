@@ -14,6 +14,7 @@ final class ImageDownloaderView: UIView {
     private var enterUrlButton = UIButton()
     private var vstackView = UIStackView()
     private var textFieldAndButtonStackView = UIStackView()
+    private var titleTextField = UITextField()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,9 +26,10 @@ final class ImageDownloaderView: UIView {
 
         urlTextField = TextFieldFactory.buildURLTextField()
         enterUrlButton = ButtonFactory.buildEnterUrlButton()
+        titleTextField = TextFieldFactory.buildTitleTextField()
         acceptButton = ButtonFactory.buildAcceptButton()
         previewImageView = ImageViewFactory.buildPreviewImageView()
-
+        previewImageView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         addSubviews()
 
         vstackView.pin(edges: [
@@ -58,12 +60,20 @@ final class ImageDownloaderView: UIView {
     func getURLFromTextField() -> String? {
         return urlTextField.text
     }
+
+    func configureTitleTextFieldAction(handler: @escaping UIActionHandler) {
+        titleTextField.addTapEnterAction(handler: handler)
+    }
+
+    func getTitleFromTextField() -> String? {
+        return titleTextField.text
+    }
 }
     // MARK: - Private
 private extension ImageDownloaderView {
     func addSubviews() {
         textFieldAndButtonStackView.addViews(from: [urlTextField, enterUrlButton])
-        vstackView.addViews(from: [textFieldAndButtonStackView, previewImageView, acceptButton])
+        vstackView.addViews(from: [textFieldAndButtonStackView, previewImageView, titleTextField, acceptButton])
         self.addSubview(vstackView)
     }
 }

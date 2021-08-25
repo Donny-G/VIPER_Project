@@ -27,9 +27,13 @@ extension MainCoordinator: CoordinatorProtocol {
             self?.showImageDownloaderView()
         }
 
+        let showAlert: (Error) -> Void = { [weak self] in
+            self?.showAlert(with: $0)
+        }
+
         let dependency = MainScreenWireFrame.Dependency(
             showImage: showImage,
-            showImageDownloaderView: showImageDownloaderView
+            showImageDownloaderView: showImageDownloaderView, showAlert: showAlert
         )
 
         let mainScreenViewController = MainScreenWireFrame(dependency: dependency).buildModule()
@@ -45,20 +49,24 @@ private extension MainCoordinator {
     }
 
     func showImageDownloaderView() {
-        let showAlert: (ImageLoaderError) -> Void = { [weak self] in
+        let showAlert: (Error) -> Void = { [weak self] in
             self?.showAlert(with: $0)
         }
 
-        let dependency = ImageDownloaderWireframe.Dependency(showAlert: showAlert)
+        let showMainScreen: () -> Void = { [weak self] in
+            self?.navigationController.popViewController(animated: true)
+        }
+
+        let dependency = ImageDownloaderWireframe.Dependency(showAlert: showAlert, showMainScreen: showMainScreen)
 
         let imageDownloaderController = ImageDownloaderWireframe(dependency: dependency ).buildImageDownloaderModule()
         navigationController.pushViewController(imageDownloaderController, animated: true)
     }
 
-    func showAlert(with error: ImageLoaderError) {
+    func showAlert(with error: Error) {
         let alert = UIAlertController(
             title: NSLocalizedString("alertTitle", comment: "Title for alert"),
-            message: error.localizedDescription(),
+            message: error.localizedDescription,
             preferredStyle: .alert
         )
 

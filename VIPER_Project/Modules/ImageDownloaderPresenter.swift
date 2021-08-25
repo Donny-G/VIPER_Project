@@ -15,16 +15,18 @@ protocol ImageDownloaderPresenterProtocol: AnyObject {
 }
 
 final class ImageDownloaderPresenter {
-    private var image: UIImage?
+    private var readyToSave = false
+
+    private var imageFrom: UIImage?
     private var view: ImageDownloaderView?
 
     private var interactor: ImageDownloaderInteractorProtocol
     private var router: ImageDownloaderRouterProtocol
 
-    init(interactor: ImageDownloaderInteractorProtocol, router: ImageDownloaderRouterProtocol, image: UIImage?) {
+    init(interactor: ImageDownloaderInteractorProtocol, router: ImageDownloaderRouterProtocol, imageFrom: UIImage?) {
         self.interactor = interactor
         self.router = router
-        self.image = image
+        self.imageFrom = imageFrom
     }
 }
 
@@ -33,7 +35,7 @@ extension ImageDownloaderPresenter: ImageDownloaderPresenterProtocol {
     func viewDidLoad(view: ImageDownloaderView) {
         self.view = view
 
-        if let image = image {
+        if let image = imageFrom {
             view.updateView(with: image)
         }
 
@@ -48,23 +50,43 @@ extension ImageDownloaderPresenter: ImageDownloaderPresenterProtocol {
         view.configureEnterURLButton {[weak self] _ in
             self?.getUrlFrom(textfield: view.getURLFromTextField())
         }
+
+        view.configureTitleTextFieldAction { [weak self] _ in
+            self?.view?.endEditing(true)
+        }
     }
 
     func acceptDownload() {
-        print("saved")
+        guard let imageToSave = imageFrom,
+              readyToSave else { return router.presentAlert(with: ApplicationError.noImageToSave)
+        }
+        guard let title = view?.getTitleFromTextField(),
+              !title.isEmpty else { return router.presentAlert(with: ApplicationError.emptyTitle) }
+        interactor.saveToRealmDB(title: title, image: imageToSave) { [weak self]  result in
+            switch result {
+            case .success():
+                self?.router.presentMainScreen()
+                self?.readyToSave = false
+            case .failure(let error):
+                self?.router.presentAlert(with: error)
+            }
+        }
     }
 
     func getUrlFrom(textfield urlString: String?) {
-        guard let urlString = urlString, !urlString.isEmpty, let url = URL(string: urlString) else {
-            return router.presentAlert(with: .unsupportedURL)
+        guard let urlString = urlString,
+              !urlString.isEmpty,
+              let url = URL(string: urlString) else { return router.presentAlert(with: NetworkError.unsupportedURL)
         }
         interactor.loadImage(from: url) {[weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let image):
-                        self?.view?.updateView(with: image)
+                    self?.view?.updateView(with: image)
+                    self?.imageFrom = image
+                    self?.readyToSave = true
                 case .failure(let error):
-                        self?.router.presentAlert(with: error)
+                    self?.router.presentAlert(with: error)
                 }
             }
         }

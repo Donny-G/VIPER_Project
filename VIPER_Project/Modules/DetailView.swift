@@ -22,6 +22,7 @@ final class DetailView: UIImageView {
         isUserInteractionEnabled = true
         pinchGestureRecognizerInit()
         panGestureRecognizerInit()
+        self.contentMode = .scaleAspectFill
     }
 
     required init?(coder: NSCoder) {

@@ -16,6 +16,7 @@ final class MainScreenWireFrame {
     struct Dependency {
         var showImage: ((UIImage) -> Void)
         var showImageDownloaderView: (() -> Void)
+        var showAlert: ((Error) -> Void)
     }
 
     let dependency: Dependency
@@ -31,7 +32,7 @@ extension MainScreenWireFrame: MainScreenWireFrameProtocol {
         let interactor = MainScreenInteractor()
         let router = MainScreenRouter(
             showImage: self.dependency.showImage,
-            showImageDownloaderView: self.dependency.showImageDownloaderView
+            showImageDownloaderView: self.dependency.showImageDownloaderView, showAlert: self.dependency.showAlert
         )
         let presenter = MainScreenPresenter(interactor: interactor, router: router)
 

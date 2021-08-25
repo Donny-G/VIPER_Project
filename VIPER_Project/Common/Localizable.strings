@@ -11,3 +11,4 @@
 "alertOkButtonTitle" = "Ok";
 "title" = "VIPER Project";
 "cell" = "Cell";
+"titleTextFieldPlaceholder" = "Enter title";
