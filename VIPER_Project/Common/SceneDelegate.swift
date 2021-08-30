@@ -6,6 +6,20 @@
 //
 
 import UIKit
+import RealmSwift
+
+final class Container {
+    init() {
+    }
+    private var realm: Realm? {
+        do {
+            return try Realm()
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
+    }
+    lazy var picturesRepository = RealmDBRepository()
+}
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

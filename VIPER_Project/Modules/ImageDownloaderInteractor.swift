@@ -11,7 +11,7 @@ import UIKit
 protocol ImageDownloaderInteractorProtocol: AnyObject {
     func loadImage(from url: URL,
                    completion: @escaping (Result <UIImage, NetworkError>) -> Void)
-    func saveToRealmDB(title: String, image: UIImage, completion: @escaping (Result <Void, ApplicationError>) -> Void)
+    func saveToRealmDB(title: String, image: UIImage, completion: @escaping (Result <Void, Error>) -> Void)
 }
 
 final class ImageDownloaderInteractor {
@@ -26,8 +26,8 @@ extension ImageDownloaderInteractor: ImageDownloaderInteractorProtocol {
         }
     }
 
-    func saveToRealmDB(title: String, image: UIImage, completion: @escaping (Result <Void, ApplicationError>) -> Void) {
-        RealmObjectManager.saveToRealmDB(title: title, image: image) { result in
+    func saveToRealmDB(title: String, image: UIImage, completion: @escaping (Result <Void, Error>) -> Void) {
+        RealmDBRepository.init().saveToDB(title: title, image: image) { result in
             completion(result)
         }
     }

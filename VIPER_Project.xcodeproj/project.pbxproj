@@ -43,8 +43,9 @@
 		05BBF48426A9536C005CBB89 /* VIPER_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF48326A9536C005CBB89 /* VIPER_ProjectUITests.swift */; };
 		05BC94F426D6669800C09A86 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BC94F326D6669800C09A86 /* ApplicationError.swift */; };
 		05BC94F626D666BA00C09A86 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BC94F526D666BA00C09A86 /* NetworkError.swift */; };
+		05E3D17126D916AC0038169F /* PictureDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3D17026D916AC0038169F /* PictureDTO.swift */; };
+		05E3D17426D9175B0038169F /* RealmDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3D17326D9175B0038169F /* RealmDBRepository.swift */; };
 		05F284C326D4D376002D4705 /* RealmImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F284C226D4D376002D4705 /* RealmImageObject.swift */; };
-		05F284C526D4F6B9002D4705 /* RealmObjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F284C426D4F6B9002D4705 /* RealmObjectManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,8 +107,9 @@
 		05BBF48526A9536C005CBB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05BC94F326D6669800C09A86 /* ApplicationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
 		05BC94F526D666BA00C09A86 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		05E3D17026D916AC0038169F /* PictureDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDTO.swift; sourceTree = "<group>"; };
+		05E3D17326D9175B0038169F /* RealmDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBRepository.swift; sourceTree = "<group>"; };
 		05F284C226D4D376002D4705 /* RealmImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmImageObject.swift; sourceTree = "<group>"; };
-		05F284C426D4F6B9002D4705 /* RealmObjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjectManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +141,7 @@
 		0550946126BA65E7008F02A4 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				05F284C226D4D376002D4705 /* RealmImageObject.swift */,
+				05E3D17026D916AC0038169F /* PictureDTO.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -222,6 +224,7 @@
 				05BBF46326A9536B005CBB89 /* SceneDelegate.swift */,
 				0584505A26CE354B007CFBBA /* Localizable.strings */,
 				0583DBCF26C859C500BA8BE5 /* InterfaceIconsEnum.swift */,
+				05BC94F326D6669800C09A86 /* ApplicationError.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -230,8 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				053289BB26C65F3E0004DBDD /* NetworkImageLoader.swift */,
-				05F284C426D4F6B9002D4705 /* RealmObjectManager.swift */,
-				05BC94F326D6669800C09A86 /* ApplicationError.swift */,
 				05BC94F526D666BA00C09A86 /* NetworkError.swift */,
 			);
 			path = Services;
@@ -273,6 +274,7 @@
 		05BBF46026A9536B005CBB89 /* VIPER_Project */ = {
 			isa = PBXGroup;
 			children = (
+				05E3D17226D917330038169F /* Repository */,
 				056D49E826CD2605004D3A5F /* Extensions */,
 				056D49E526CCE929004D3A5F /* Factories */,
 				0550FFFF26BC1F7900750297 /* Coordinators */,
@@ -303,6 +305,15 @@
 				05BBF48526A9536C005CBB89 /* Info.plist */,
 			);
 			path = VIPER_ProjectUITests;
+			sourceTree = "<group>";
+		};
+		05E3D17226D917330038169F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				05E3D17326D9175B0038169F /* RealmDBRepository.swift */,
+				05F284C226D4D376002D4705 /* RealmImageObject.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,7 +408,7 @@
 			);
 			mainGroup = 05BBF45526A9536B005CBB89;
 			packageReferences = (
-				050DC20A26D7FAC000B9AA0D /* XCRemoteSwiftPackageReference "realm-cocoa.git" */,
+				050DC20A26D7FAC000B9AA0D /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 05BBF45F26A9536B005CBB89 /* Products */;
 			projectDirPath = "";
@@ -477,7 +488,6 @@
 				05A1F8F626C5053C00F95EB3 /* ImageDownloaderRouter.swift in Sources */,
 				0584506326CE84CE007CFBBA /* TextFieldFactory.swift in Sources */,
 				056D49E726CCE946004D3A5F /* ButtonFactory.swift in Sources */,
-				05F284C526D4F6B9002D4705 /* RealmObjectManager.swift in Sources */,
 				054CF9DC26C278160020AA1F /* DetailView.swift in Sources */,
 				05A1F8F426C5052A00F95EB3 /* ImageDownloaderInteractor.swift in Sources */,
 				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
@@ -492,8 +502,10 @@
 				0583DBD026C859C500BA8BE5 /* InterfaceIconsEnum.swift in Sources */,
 				05A1F8EE26C504BF00F95EB3 /* ImageDownloaderViewController.swift in Sources */,
 				059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */,
+				05E3D17426D9175B0038169F /* RealmDBRepository.swift in Sources */,
 				056D49EE26CD27B8004D3A5F /* Stackview.swift in Sources */,
 				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
+				05E3D17126D916AC0038169F /* PictureDTO.swift in Sources */,
 				05BC94F626D666BA00C09A86 /* NetworkError.swift in Sources */,
 				053289BC26C65F3E0004DBDD /* NetworkImageLoader.swift in Sources */,
 				0584AEE326B2D88A0068E184 /* DetailViewController.swift in Sources */,
@@ -826,7 +838,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		050DC20A26D7FAC000B9AA0D /* XCRemoteSwiftPackageReference "realm-cocoa.git" */ = {
+		050DC20A26D7FAC000B9AA0D /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
 			requirement = {
@@ -839,7 +851,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		050DC20B26D7FAC000B9AA0D /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 050DC20A26D7FAC000B9AA0D /* XCRemoteSwiftPackageReference "realm-cocoa.git" */;
+			package = 050DC20A26D7FAC000B9AA0D /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

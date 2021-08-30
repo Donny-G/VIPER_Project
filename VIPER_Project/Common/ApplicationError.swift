@@ -22,7 +22,7 @@ enum ApplicationError: LocalizedError, Error {
         case .noImageToSave:
             return "Please, enter URL for image"
         case .unableToLoadFromRealmDB:
-            return "Database error during loading"
+            return "Unable to load pictures, or DB is empty"
         case .savingError(let error):
             return "Error during saving: \(error)"
         case .unknownError(let error):

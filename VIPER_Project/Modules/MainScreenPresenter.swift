@@ -16,7 +16,7 @@ protocol MainScreenPresenterProtocol: AnyObject {
 }
 
 final class MainScreenPresenter: NSObject {
-    private var pictures: Results<RealmImageObject>?
+    private var pictures: [PictureDTO]?
 
     private var interactor: MainScreenInteractorProtocol
     private var router: MainScreenRouterProtocol
@@ -51,6 +51,15 @@ extension MainScreenPresenter: MainScreenPresenterProtocol {
     }
 
     func viewDidAppear(tableView: UITableView) {
+        interactor.loadPicturesList { result in
+            switch result {
+            case .success(let savedPictures):
+                self.pictures = savedPictures
+            case .failure(let error):
+                self.router.presentAlert(with: error)
+            }
+
+        }
         tableView.reloadData()
     }
 }
@@ -58,10 +67,7 @@ extension MainScreenPresenter: MainScreenPresenterProtocol {
 // MARK: - UITableViewDataSource, UITableViewDelegate
 extension MainScreenPresenter: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let pictures = self.pictures {
-            return pictures.count
-        }
-        return 0
+        return pictures?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -92,10 +98,12 @@ extension MainScreenPresenter: UITableViewDataSource, UITableViewDelegate {
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if let item = pictures?[indexPath.row] {
-                RealmObjectManager.deleteFromRealmDB(record: item) { result in
+
+                RealmDBRepository.init().deleteFromDB(objectId: item.identifier) { result in
                     switch result {
                     case .success():
-                        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+                        self.pictures?.remove(at: indexPath.row)
+                        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.none)
                     case .failure(let error):
                         self.router.presentAlert(with: error)
                     }

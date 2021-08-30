@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 protocol MainScreenInteractorProtocol: AnyObject {
-    func loadPicturesList(completion: @escaping (Result <Results<RealmImageObject>, ApplicationError>) -> Void)
+    func loadPicturesList(completion: @escaping (Result <[PictureDTO], Error>) -> Void)
     func loadImage(index: Int, completion: @escaping (Result <UIImage, ApplicationError>) -> Void)
 }
 
@@ -20,21 +20,19 @@ final class MainScreenInteractor {
 
 // MARK: - MainScreenInteractorProtocol
 extension MainScreenInteractor: MainScreenInteractorProtocol {
-    func loadPicturesList(completion: @escaping (Result <Results<RealmImageObject>, ApplicationError>) -> Void) {
-        RealmObjectManager.loadRealmDB { result in
+    func loadPicturesList(completion: @escaping (Result <[PictureDTO], Error>) -> Void) {
+        RealmDBRepository.init().loadFromDB { result in
             completion(result)
         }
     }
 
     func loadImage(index: Int, completion: @escaping (Result <UIImage, ApplicationError>) -> Void) {
-        RealmObjectManager.loadRealmDB { result in
+        RealmDBRepository.init().loadFromDB { result in
             switch result {
             case .success(let savedImages):
-                if let imageData = savedImages[index].image, let imageToLoad = UIImage(data: imageData) {
-                    completion(.success(imageToLoad))
-                }
+                completion(.success(savedImages[index].image))
             case .failure(let error):
-                completion(.failure(error))
+                completion(.failure(ApplicationError.unableToLoadFromRealmDB))
             }
         }
     }

@@ -10,11 +10,13 @@ import RealmSwift
 
 class RealmImageObject: Object {
     @Persisted var title: String
-    @Persisted var image: Data?
+    @Persisted var image: Data
+    @Persisted var identifier: UUID
 
-    convenience init(title: String, image: Data?) {
+    convenience init(title: String, image: Data, identifier: UUID) {
         self.init()
         self.title = title
         self.image = image
+        self.identifier = identifier
     }
 }
