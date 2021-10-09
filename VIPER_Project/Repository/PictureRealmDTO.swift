@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class RealmImageObject: Object {
+class PictureRealmDTO: Object {
     @Persisted var title: String
     @Persisted var image: Data
     @Persisted var identifier: UUID

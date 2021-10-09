@@ -9,8 +9,6 @@ import UIKit
 import RealmSwift
 
 final class Container {
-    init() {
-    }
     private var realm: Realm? {
         do {
             return try Realm()
@@ -21,10 +19,28 @@ final class Container {
     lazy var picturesRepository = RealmDBRepository()
 }
 
+final class ModulesFactory {
+    init(container: Container) {
+        self.container = container
+    }
+    let container: Container
+
+    func buildMainScreen(parameters: MainScreenWireFrameParameters) -> UIViewController {
+        mainScreenWireframe.buildModule(params: parameters)
+    }
+
+    private var mainScreenWireframe: MainScreenWireFrame {
+        let dependency = MainScreenWireFrame.Dependency(repository:
+                                                            container.picturesRepository)
+        return MainScreenWireFrame(dependency: dependency)
+    }
+}
+
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     let navigationController = UINavigationController()
+    let container = Container()
 
     lazy var coordinator: MainCoordinator = self.createCoordinator()
 
@@ -80,6 +96,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 // MARK: - createCoordinator method
 extension SceneDelegate {
     func createCoordinator() -> MainCoordinator {
-        return MainCoordinator(navigationController: navigationController)
+        return MainCoordinator(navigationController: navigationController,
+                               modulesFactory: ModulesFactory(container: container))
     }
 }

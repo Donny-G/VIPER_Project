@@ -16,7 +16,7 @@ protocol MainScreenPresenterProtocol: AnyObject {
 }
 
 final class MainScreenPresenter: NSObject {
-    private var pictures: [PictureDTO]?
+    private var pictures: [Picture]?
 
     private var interactor: MainScreenInteractorProtocol
     private var router: MainScreenRouterProtocol
@@ -35,15 +35,7 @@ extension MainScreenPresenter: MainScreenPresenterProtocol {
         tableView.register(UITableViewCell.self,
                            forCellReuseIdentifier: NSLocalizedString("cell", comment: "Cell identfier"))
 
-        interactor.loadPicturesList { result in
-            switch result {
-            case .success(let savedPictures):
-                self.pictures = savedPictures
-            case .failure(let error):
-                self.router.presentAlert(with: error)
-            }
-
-        }
+        uploadPictures(tableView: tableView)
     }
 
     func openImageDownloader() {
@@ -51,16 +43,7 @@ extension MainScreenPresenter: MainScreenPresenterProtocol {
     }
 
     func viewDidAppear(tableView: UITableView) {
-        interactor.loadPicturesList { result in
-            switch result {
-            case .success(let savedPictures):
-                self.pictures = savedPictures
-            case .failure(let error):
-                self.router.presentAlert(with: error)
-            }
-
-        }
-        tableView.reloadData()
+        uploadPictures(tableView: tableView)
     }
 }
 
@@ -108,6 +91,21 @@ extension MainScreenPresenter: UITableViewDataSource, UITableViewDelegate {
                         self.router.presentAlert(with: error)
                     }
                 }
+            }
+        }
+    }
+}
+
+// MARK: - Private extension
+extension MainScreenPresenter {
+    func uploadPictures(tableView: UITableView) {
+        interactor.loadPicturesList { result in
+            switch result {
+            case .success(let savedPictures):
+                self.pictures = savedPictures
+                tableView.reloadData()
+            case .failure(let error):
+                self.router.presentAlert(with: error)
             }
         }
     }

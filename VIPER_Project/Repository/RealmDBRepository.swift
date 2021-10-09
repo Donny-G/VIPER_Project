@@ -9,17 +9,15 @@ import Foundation
 import UIKit
 import RealmSwift
 
-protocol RealmDBRepositoryProtocol {
-    associatedtype DomainObject
-    associatedtype RealmObject
+protocol RealmDBRepositoryProtocol: AnyObject {
 
-    func loadFromDB(completion: @escaping(Result<[DomainObject], Error>) -> Void)
+    func loadFromDB(completion: @escaping(Result<[Picture], Error>) -> Void)
     func saveToDB(title: String,
                   image: UIImage, completion: @escaping(Result <Void, Error>) -> Void)
     func deleteFromDB(objectId: UUID, completion: @escaping(Result <Void, Error>) -> Void)
 }
 
-struct RealmDBRepository {
+class RealmDBRepository {
     private var realm: Realm? {
         do {
             return try Realm()
@@ -32,8 +30,8 @@ struct RealmDBRepository {
 // MARK: - RealmDBRepositoryProtocol
 extension RealmDBRepository: RealmDBRepositoryProtocol {
 
-    typealias DomainObject = PictureDTO
-    typealias RealmObject = RealmImageObject
+    typealias DomainObject = Picture
+    typealias RealmObject = PictureRealmDTO
 
     func loadFromDB(completion: @escaping(Result<[DomainObject], Error>) -> Void) {
         guard  let realmData = realm?.objects(RealmObject.self) else {

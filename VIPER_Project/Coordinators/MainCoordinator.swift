@@ -10,9 +10,11 @@ import UIKit
 
 final class MainCoordinator {
     private var navigationController: UINavigationController
+    private var modulesFactory: ModulesFactory
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, modulesFactory: ModulesFactory) {
         self.navigationController = navigationController
+        self.modulesFactory = modulesFactory
     }
 }
 
@@ -31,12 +33,13 @@ extension MainCoordinator: CoordinatorProtocol {
             self?.showAlert(with: $0)
         }
 
-        let dependency = MainScreenWireFrame.Dependency(
+        let parameters = MainScreenWireFrameParameters(
             showImage: showImage,
-            showImageDownloaderView: showImageDownloaderView, showAlert: showAlert
+            showImageDownloaderView: showImageDownloaderView,
+            showAlert: showAlert
         )
 
-        let mainScreenViewController = MainScreenWireFrame(dependency: dependency).buildModule()
+        let mainScreenViewController = modulesFactory.buildMainScreen(parameters: parameters)
         navigationController.pushViewController(mainScreenViewController, animated: true)
     }
 }

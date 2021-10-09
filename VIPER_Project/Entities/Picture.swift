@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class PictureDTO {
+class Picture {
     var identifier: UUID
     var title: String
     var image: UIImage
