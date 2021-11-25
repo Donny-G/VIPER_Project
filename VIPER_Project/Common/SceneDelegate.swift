@@ -25,7 +25,7 @@ final class ModulesFactory {
     }
     let container: Container
 
-    func buildMainScreen(parameters: MainScreenWireFrameParameters) -> UIViewController {
+    func buildMainScreen(parameters: MainScreenWireFrame.MainScreenWireFrameParameters) -> UIViewController {
         mainScreenWireframe.buildModule(params: parameters)
     }
 

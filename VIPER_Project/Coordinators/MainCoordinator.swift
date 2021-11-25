@@ -33,8 +33,8 @@ extension MainCoordinator: CoordinatorProtocol {
             self?.showAlert(with: $0)
         }
 
-        let parameters = MainScreenWireFrameParameters(
-            showImage: showImage,
+        let parameters = MainScreenWireFrame.MainScreenWireFrameParameters(
+            showImages: showImage,
             showImageDownloaderView: showImageDownloaderView,
             showAlert: showAlert
         )

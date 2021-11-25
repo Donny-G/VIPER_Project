@@ -21,7 +21,9 @@ struct NetworkImageLoader {
             switch httpResponse.statusCode {
             case 200...299:
                 guard let data = data,
-                      let outputImage = UIImage(data: data) else { return completion(.failure(.invalidData)) }
+                      let outputImage = UIImage(data: data) else {
+                          return completion(.failure(.invalidData))
+                      }
                 completion(.success((outputImage)))
             case 400:
                 completion(.failure(.badRequest))

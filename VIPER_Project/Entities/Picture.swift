@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Picture {
+final class Picture {
     var identifier: UUID
     var title: String
     var image: UIImage

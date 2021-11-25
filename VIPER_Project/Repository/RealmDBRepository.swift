@@ -17,7 +17,7 @@ protocol RealmDBRepositoryProtocol: AnyObject {
     func deleteFromDB(objectId: UUID, completion: @escaping(Result <Void, Error>) -> Void)
 }
 
-class RealmDBRepository {
+final class RealmDBRepository {
     private var realm: Realm? {
         do {
             return try Realm()
