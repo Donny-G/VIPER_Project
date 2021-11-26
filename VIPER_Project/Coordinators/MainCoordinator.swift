@@ -10,9 +10,11 @@ import UIKit
 
 final class MainCoordinator {
     private var navigationController: UINavigationController
+    private var modulesFactory: ModulesFactory
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, modulesFactory: ModulesFactory) {
         self.navigationController = navigationController
+        self.modulesFactory = modulesFactory
     }
 }
 
@@ -27,12 +29,17 @@ extension MainCoordinator: CoordinatorProtocol {
             self?.showImageDownloaderView()
         }
 
-        let dependency = MainScreenWireFrame.Dependency(
-            showImage: showImage,
-            showImageDownloaderView: showImageDownloaderView
+        let showAlert: (Error) -> Void = { [weak self] in
+            self?.showAlert(with: $0)
+        }
+
+        let parameters = MainScreenWireFrame.MainScreenWireFrameParameters(
+            showImages: showImage,
+            showImageDownloaderView: showImageDownloaderView,
+            showAlert: showAlert
         )
 
-        let mainScreenViewController = MainScreenWireFrame(dependency: dependency).buildModule()
+        let mainScreenViewController = modulesFactory.buildMainScreen(parameters: parameters)
         navigationController.pushViewController(mainScreenViewController, animated: true)
     }
 }
@@ -45,20 +52,24 @@ private extension MainCoordinator {
     }
 
     func showImageDownloaderView() {
-        let showAlert: (ImageLoaderError) -> Void = { [weak self] in
+        let showAlert: (Error) -> Void = { [weak self] in
             self?.showAlert(with: $0)
         }
 
-        let dependency = ImageDownloaderWireframe.Dependency(showAlert: showAlert)
+        let showMainScreen: () -> Void = { [weak self] in
+            self?.navigationController.popViewController(animated: true)
+        }
+
+        let dependency = ImageDownloaderWireframe.Dependency(showAlert: showAlert, showMainScreen: showMainScreen)
 
         let imageDownloaderController = ImageDownloaderWireframe(dependency: dependency ).buildImageDownloaderModule()
         navigationController.pushViewController(imageDownloaderController, animated: true)
     }
 
-    func showAlert(with error: ImageLoaderError) {
+    func showAlert(with error: Error) {
         let alert = UIAlertController(
             title: NSLocalizedString("alertTitle", comment: "Title for alert"),
-            message: error.localizedDescription(),
+            message: error.localizedDescription,
             preferredStyle: .alert
         )
 

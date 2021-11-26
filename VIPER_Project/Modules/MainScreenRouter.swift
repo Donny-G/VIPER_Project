@@ -11,6 +11,7 @@ import UIKit
 protocol MainScreenRouterProtocol: AnyObject {
     func presentDetailView(image: UIImage)
     func presentImageDownloaderView()
+    func presentAlert(with error: Error)
 }
 
 final class MainScreenRouter {
@@ -18,9 +19,14 @@ final class MainScreenRouter {
 
     var showImageDownloaderView: (() -> Void)
 
-    init(showImage: @escaping ((UIImage) -> Void), showImageDownloaderView: @escaping (() -> Void)) {
+    var showAlert: ((Error) -> Void)
+
+    init(showImage: @escaping ((UIImage) -> Void),
+         showImageDownloaderView: @escaping (() -> Void),
+         showAlert: @escaping ((Error) -> Void)) {
         self.showImage = showImage
         self.showImageDownloaderView = showImageDownloaderView
+        self.showAlert = showAlert
     }
 }
 
@@ -32,5 +38,9 @@ extension MainScreenRouter: MainScreenRouterProtocol {
 
     func presentImageDownloaderView() {
         showImageDownloaderView()
+    }
+
+    func presentAlert(with error: Error) {
+        showAlert(error)
     }
 }

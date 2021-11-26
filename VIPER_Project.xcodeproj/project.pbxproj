@@ -3,15 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050DC20C26D7FAC000B9AA0D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 050DC20B26D7FAC000B9AA0D /* RealmSwift */; };
 		053289BC26C65F3E0004DBDD /* NetworkImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053289BB26C65F3E0004DBDD /* NetworkImageLoader.swift */; };
 		054CF9DC26C278160020AA1F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054CF9DB26C278160020AA1F /* DetailView.swift */; };
 		0550000126BC1FDB00750297 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550000026BC1FDB00750297 /* CoordinatorProtocol.swift */; };
 		0550000326BC206600750297 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550000226BC206600750297 /* MainCoordinator.swift */; };
-		0550946326BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550946226BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift */; };
 		056B835F26AF01BE0082937E /* MainScreenWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056B835E26AF01BE0082937E /* MainScreenWireframe.swift */; };
 		056D49E726CCE946004D3A5F /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D49E626CCE946004D3A5F /* ButtonFactory.swift */; };
 		056D49EA26CD261B004D3A5F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D49E926CD261B004D3A5F /* UIColor.swift */; };
@@ -41,6 +41,11 @@
 		05BBF46E26A9536C005CBB89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05BBF46C26A9536C005CBB89 /* LaunchScreen.storyboard */; };
 		05BBF47926A9536C005CBB89 /* VIPER_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF47826A9536C005CBB89 /* VIPER_ProjectTests.swift */; };
 		05BBF48426A9536C005CBB89 /* VIPER_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BBF48326A9536C005CBB89 /* VIPER_ProjectUITests.swift */; };
+		05BC94F426D6669800C09A86 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BC94F326D6669800C09A86 /* ApplicationError.swift */; };
+		05BC94F626D666BA00C09A86 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BC94F526D666BA00C09A86 /* NetworkError.swift */; };
+		05E3D17126D916AC0038169F /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3D17026D916AC0038169F /* Picture.swift */; };
+		05E3D17426D9175B0038169F /* RealmDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3D17326D9175B0038169F /* RealmDBRepository.swift */; };
+		05F284C326D4D376002D4705 /* PictureRealmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F284C226D4D376002D4705 /* PictureRealmDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +70,6 @@
 		054CF9DB26C278160020AA1F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		0550000026BC1FDB00750297 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		0550000226BC206600750297 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		0550946226BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPlaceHolderPictureObject.swift; sourceTree = "<group>"; };
 		056B835E26AF01BE0082937E /* MainScreenWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenWireframe.swift; sourceTree = "<group>"; };
 		056D49E626CCE946004D3A5F /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		056D49E926CD261B004D3A5F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -101,6 +105,11 @@
 		05BBF47F26A9536C005CBB89 /* VIPER_ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPER_ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BBF48326A9536C005CBB89 /* VIPER_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPER_ProjectUITests.swift; sourceTree = "<group>"; };
 		05BBF48526A9536C005CBB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05BC94F326D6669800C09A86 /* ApplicationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
+		05BC94F526D666BA00C09A86 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		05E3D17026D916AC0038169F /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		05E3D17326D9175B0038169F /* RealmDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBRepository.swift; sourceTree = "<group>"; };
+		05F284C226D4D376002D4705 /* PictureRealmDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureRealmDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				050DC20C26D7FAC000B9AA0D /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +141,7 @@
 		0550946126BA65E7008F02A4 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				0550946226BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift */,
+				05E3D17026D916AC0038169F /* Picture.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -214,6 +224,7 @@
 				05BBF46326A9536B005CBB89 /* SceneDelegate.swift */,
 				0584505A26CE354B007CFBBA /* Localizable.strings */,
 				0583DBCF26C859C500BA8BE5 /* InterfaceIconsEnum.swift */,
+				05BC94F326D6669800C09A86 /* ApplicationError.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -222,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				053289BB26C65F3E0004DBDD /* NetworkImageLoader.swift */,
+				05BC94F526D666BA00C09A86 /* NetworkError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -262,6 +274,7 @@
 		05BBF46026A9536B005CBB89 /* VIPER_Project */ = {
 			isa = PBXGroup;
 			children = (
+				05E3D17226D917330038169F /* Repository */,
 				056D49E826CD2605004D3A5F /* Extensions */,
 				056D49E526CCE929004D3A5F /* Factories */,
 				0550FFFF26BC1F7900750297 /* Coordinators */,
@@ -294,6 +307,15 @@
 			path = VIPER_ProjectUITests;
 			sourceTree = "<group>";
 		};
+		05E3D17226D917330038169F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				05E3D17326D9175B0038169F /* RealmDBRepository.swift */,
+				05F284C226D4D376002D4705 /* PictureRealmDTO.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -311,6 +333,9 @@
 			dependencies = (
 			);
 			name = VIPER_Project;
+			packageProductDependencies = (
+				050DC20B26D7FAC000B9AA0D /* RealmSwift */,
+			);
 			productName = VIPER_Project;
 			productReference = 05BBF45E26A9536B005CBB89 /* VIPER_Project.app */;
 			productType = "com.apple.product-type.application";
@@ -382,6 +407,9 @@
 				Base,
 			);
 			mainGroup = 05BBF45526A9536B005CBB89;
+			packageReferences = (
+				050DC20A26D7FAC000B9AA0D /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 05BBF45F26A9536B005CBB89 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -449,6 +477,7 @@
 				059B521C26AAC2920004997C /* MainScreenRouter.swift in Sources */,
 				0584AEEB26B2D8FC0068E184 /* DetailViewWireFrame.swift in Sources */,
 				05A1F8F826C5055300F95EB3 /* ImageDownloaderWireframe.swift in Sources */,
+				05BC94F426D6669800C09A86 /* ApplicationError.swift in Sources */,
 				05BBF46626A9536B005CBB89 /* MainScreenViewController.swift in Sources */,
 				05A1F8F026C504F600F95EB3 /* ImageDownloaderView.swift in Sources */,
 				05BBF46226A9536B005CBB89 /* AppDelegate.swift in Sources */,
@@ -460,21 +489,24 @@
 				0584506326CE84CE007CFBBA /* TextFieldFactory.swift in Sources */,
 				056D49E726CCE946004D3A5F /* ButtonFactory.swift in Sources */,
 				054CF9DC26C278160020AA1F /* DetailView.swift in Sources */,
-				0550946326BA67F3008F02A4 /* JSONPlaceHolderPictureObject.swift in Sources */,
 				05A1F8F426C5052A00F95EB3 /* ImageDownloaderInteractor.swift in Sources */,
 				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
 				0584AEE326B2D88A0068E184 /* DetailViewController.swift in Sources */,
 				056D49EC26CD2624004D3A5F /* UIView.swift in Sources */,
 				05A1F8F226C5050F00F95EB3 /* ImageDownloaderPresenter.swift in Sources */,
 				0550000326BC206600750297 /* MainCoordinator.swift in Sources */,
+				05F284C326D4D376002D4705 /* PictureRealmDTO.swift in Sources */,
 				056D49EA26CD261B004D3A5F /* UIColor.swift in Sources */,
 				0550000126BC1FDB00750297 /* CoordinatorProtocol.swift in Sources */,
 				059B521826AAC2420004997C /* MainScreenPresenter.swift in Sources */,
 				0583DBD026C859C500BA8BE5 /* InterfaceIconsEnum.swift in Sources */,
 				05A1F8EE26C504BF00F95EB3 /* ImageDownloaderViewController.swift in Sources */,
 				059B521A26AAC2710004997C /* MainScreenInteractor.swift in Sources */,
+				05E3D17426D9175B0038169F /* RealmDBRepository.swift in Sources */,
 				056D49EE26CD27B8004D3A5F /* Stackview.swift in Sources */,
 				0584AEE526B2D8AA0068E184 /* DetailViewPresenter.swift in Sources */,
+				05E3D17126D916AC0038169F /* Picture.swift in Sources */,
+				05BC94F626D666BA00C09A86 /* NetworkError.swift in Sources */,
 				053289BC26C65F3E0004DBDD /* NetworkImageLoader.swift in Sources */,
 				0584AEE326B2D88A0068E184 /* DetailViewController.swift in Sources */,
 			);
@@ -647,7 +679,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HT65N3ZFYQ;
+				DEVELOPMENT_TEAM = XTWPXYNAU7;
 				INFOPLIST_FILE = VIPER_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -666,7 +698,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HT65N3ZFYQ;
+				DEVELOPMENT_TEAM = XTWPXYNAU7;
 				INFOPLIST_FILE = VIPER_Project/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -804,6 +836,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		050DC20A26D7FAC000B9AA0D /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.13.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		050DC20B26D7FAC000B9AA0D /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 050DC20A26D7FAC000B9AA0D /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 05BBF45626A9536B005CBB89 /* Project object */;
 }

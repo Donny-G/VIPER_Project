@@ -8,20 +8,27 @@
 import Foundation
 
 protocol ImageDownloaderRouterProtocol: AnyObject {
-    func presentAlert(with error: ImageLoaderError)
+    func presentAlert(with error: Error)
+    func presentMainScreen()
 }
 
 final class ImageDownloaderRouter {
-    var showAlert: ((ImageLoaderError) -> Void)
+    var showAlert: ((Error) -> Void)
+    var showMainScreen: (() -> Void)
 
-    init(showAlert: @escaping ((ImageLoaderError) -> Void)) {
+    init(showAlert: @escaping ((Error) -> Void), showMainScreen: @escaping (() -> Void)) {
         self.showAlert = showAlert
+        self.showMainScreen = showMainScreen
     }
 }
 
 // MARK: - ImageDownloaderRouterProtocol
 extension ImageDownloaderRouter: ImageDownloaderRouterProtocol {
-    func presentAlert(with error: ImageLoaderError) {
+    func presentAlert(with error: Error) {
         showAlert(error)
+    }
+
+    func presentMainScreen() {
+        showMainScreen()
     }
 }

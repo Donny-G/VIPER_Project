@@ -14,7 +14,8 @@ protocol ImageDownloaderWireframeProtocol: AnyObject {
 
 final class ImageDownloaderWireframe {
     struct Dependency {
-        var showAlert: ((ImageLoaderError) -> Void)
+        var showAlert: ((Error) -> Void)
+        var showMainScreen: (() -> Void)
     }
 
     let dependency: Dependency
@@ -29,11 +30,11 @@ final class ImageDownloaderWireframe {
 extension ImageDownloaderWireframe: ImageDownloaderWireframeProtocol {
     func buildImageDownloaderModule() -> UIViewController {
         let interactor = ImageDownloaderInteractor()
-        let router = ImageDownloaderRouter(showAlert: dependency.showAlert)
+        let router = ImageDownloaderRouter(showAlert: dependency.showAlert, showMainScreen: dependency.showMainScreen)
         let image = InterfaceIconsEnum.defaultImage.image
         let presenter = ImageDownloaderPresenter(interactor: interactor,
                                                  router: router,
-                                                 image: image)
+                                                 imageFrom: image)
 
         let imageDownloaderViewController = ImageDownloaderViewController()
         imageDownloaderViewController.presenter = presenter

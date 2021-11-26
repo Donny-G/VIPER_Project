@@ -24,7 +24,7 @@ final class ImageViewFactory {
 
         imageView.backgroundColor = config.color
         imageView.configureLayer(borderWidth: 2, cornerRadius: 20)
-
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }
 }

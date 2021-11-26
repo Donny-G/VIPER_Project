@@ -9,13 +9,18 @@ import Foundation
 import UIKit
 
 protocol MainScreenWireFrameProtocol: AnyObject {
-    func buildModule() -> UIViewController
+    func buildModule(params: MainScreenWireFrame.MainScreenWireFrameParameters) -> UIViewController
 }
 
 final class MainScreenWireFrame {
-    struct Dependency {
-        var showImage: ((UIImage) -> Void)
+    struct MainScreenWireFrameParameters {
+        var showImages: ((UIImage) -> Void)
         var showImageDownloaderView: (() -> Void)
+        var showAlert: ((Error) -> Void)
+    }
+
+    struct Dependency {
+        let repository: RealmDBRepositoryProtocol
     }
 
     let dependency: Dependency
@@ -27,11 +32,11 @@ final class MainScreenWireFrame {
 
 // MARK: - MainScreenWireFrameProtocol
 extension MainScreenWireFrame: MainScreenWireFrameProtocol {
-    func buildModule() -> UIViewController {
-        let interactor = MainScreenInteractor()
+    func buildModule(params: MainScreenWireFrameParameters) -> UIViewController {
+        let interactor = MainScreenInteractor(repository: dependency.repository)
         let router = MainScreenRouter(
-            showImage: self.dependency.showImage,
-            showImageDownloaderView: self.dependency.showImageDownloaderView
+            showImage: params.showImages,
+            showImageDownloaderView: params.showImageDownloaderView, showAlert: params.showAlert
         )
         let presenter = MainScreenPresenter(interactor: interactor, router: router)
 
